@@ -1,0 +1,511 @@
+/* GENERAL STYLES */
+/* NAVIGATION */
+/* BIO */
+/* PURPOSE */
+/* DESIGN STANDARDS */
+/* FOOTER */
+/* ACCORDIONS */
+/* PAGE TABS */
+/* MOBILE STYLES */
+
+
+/* GENERAL STYLES */
+body, html{
+    margin: 0;
+    padding:0;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, header p, .headings, .headings a{
+	font-family: 'Ovo', serif;
+	color: #4D7A8C;
+}
+
+h1{
+  font-size: 2em;
+}
+
+h2{
+  font-size: 1.625em;
+}
+
+h3{
+  font-size: 1.375em;
+}
+
+h4{
+  font-size: 1.125em;
+  line-height: .5em;
+}
+
+.headings, .headings a{
+	font-size: 1.1em;
+}
+
+p, li, a, button{
+	font-family: 'Muli', sans-serif;
+	color: #4D7A8C;
+}
+
+a, .headings a{
+	color: #BFB6B0;
+	text-decoration: none;
+	border-bottom: 1px solid #BFB6B0;
+	-webkit-transition: 1s; /* Safari prior 6.1 */
+  	transition: 1s;
+}
+
+a:hover, .headings a:hover{
+	color: #6CBAD9;
+	text-decoration: none;
+	border-bottom: 1px solid #6CBAD9;
+}
+
+.code{
+  font-family: 'Roboto Mono', monospace;
+  color: #cc99cd;
+}
+
+.maxScreenSize{
+    max-width: 1500px;
+    margin: 0 auto !important;
+    padding: 1rem;
+    margin: auto auto 1rem auto;
+}
+
+.content{
+	padding: 0 1em;
+}
+
+.btn{
+	background-color: rgba(242,223,206, .5);
+	color: #4D7A8C;
+	padding: 1em;
+	border: 1px solid #A3C9D9;
+	margin: 1em 0;
+}
+.btn:hover{
+	background-color: #4D7A8C;
+	color: #ffffff;
+}
+
+iframe.youTube {
+    width: 100%;
+    height: 100%;
+}
+
+/* NAVIGATION */
+header{
+	background-color: #4D7A8C;
+	box-shadow: 0 4px 8px 0 rgba(191, 182, 176, .9), 0 6px 20px 0 rgba(191, 182, 176, .9);
+}
+
+header .maxScreenSize {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    color: #ffffff;
+    padding: 0 1em;
+}
+
+header p, header .icon {
+    font-size: 1.5em;
+    border: none;
+    color: #ffffff;
+}
+
+header p a{
+  text-decoration: none;
+  border: none;
+}
+
+header p a:hover{
+  text-decoration: none;
+  color: #ffffff;
+  border: none;
+}
+
+header a, footer p {
+    color: #ffffff;
+}
+
+.header_nav:nth-child(2) {
+    justify-self: right;
+    align-self: center;
+}
+
+.navigationLinks a.currentPage, .navigationLinks a.currentPage:hover{
+    color: #BFB6B0;
+    text-decoration: none;
+    border-bottom: 1px solid #BFB6B0;
+}
+
+.navigationLinks a:hover{
+	border-bottom: 1px solid #4D7A8C;
+}
+
+.navigationLinks {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color:#fff;
+  overflow-x: hidden;
+  padding-top: 60px;
+  text-align: left;
+  z-index: 10;
+}
+
+.navigationLinks a {
+  padding: 8px 8px 8px 32px;
+  display: block;
+  z-index: 10;
+  color: #4D7A8C;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-size: 1.5em;
+}
+
+.navigationLinks a.nav_indent {
+    font-size: 1em;
+    padding-left: 2.5em;
+}
+
+.navigationLinks .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+  border: none;
+}
+
+.closebtn:hover{
+	border: none !important;
+}
+
+/* BIO */
+.content_bio-upper_img {
+    border-radius: 50%;
+    max-width: 50%;
+}
+
+/* PURPOSE */
+.purpose, .designColors{
+	background-color: #a3c9d9;
+	background-image: url("../images/brushed-alum-dark.png");
+	/* Image from: https://www.transparenttextures.com/; */
+  padding: 2.5em;
+	background-position: center;
+    background-attachment: fixed;
+}
+
+.purpose .content, .designColors .content {
+    background-color: #ffffff;
+    padding: .5em;
+    text-align: center;
+}
+
+/* DESIGN STANDARDS */
+.features {
+    margin-bottom: 2em;
+}
+
+.colors {
+    display: grid;
+    grid-row-gap: 1em;
+    justify-content: center;
+}
+
+.color{
+    width: 8em;
+    height: 8em;
+}
+
+.color_1{background-color: #6CBAD9;}
+.color_2{background-color: #4D7A8C;}
+.color_3{background-color: #A3C9D9;}
+.color_4{background-color: #F2DFCE;}
+.color_5{background-color: #BFB6B0;}
+
+.color p {
+    color: black;
+    text-align: center;
+}
+
+.features p:nth-child(3){
+	margin-top:2.5em;
+}
+
+/* FOOTER */
+footer{
+	background-color: #4D7A8C;
+	padding: 1em;
+	box-shadow: -1px 1px 8px 0 rgba(191, 182, 176, .9), 0 -6px 20px 0 rgba(191, 182, 176, .9);
+	margin-top: 3em;
+}
+
+.footer_home{
+  box-shadow: none;
+  margin-top: 0;
+}
+
+footer a{
+  text-decoration: none;
+  border: none;
+  color: #ffffff;
+}
+
+.social{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.social svg {
+    width: 2em;
+    fill: #ffffff;
+    transition: 1s;
+}
+
+.social svg:hover {
+    fill: #F2DFCE;
+    transition: 1s;
+}
+
+.social a:hover{
+    border: none;
+}
+
+.footer_nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+}
+
+.footer_currentPage,.footer_currentPage:hover{
+  color: #F2DFCE;
+}
+
+.footer_nav a:hover{
+  color: #F2DFCE;
+  border: none;
+}
+
+/* ACCORDIONS */
+.accordion {
+  background-color: #A3C9D9;
+  color: #ffffff;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #6CBAD9;
+}
+
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s ease-out;
+}
+
+/* PAGE TABS */
+.tab {
+  overflow: hidden;
+  border: 1px solid #A3C9D9;
+  background-color: rgba(242,223,206, .5);
+  color: #4D7A8C;
+}
+
+.tab button {
+  background-color: transparent;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover, .tab button.active {
+  background-color: #4D7A8C;
+  color: #ffffff;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+pre[class*="language-"].line-numbers {
+  padding: 1em !important;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  tab-size: 1 !important;
+}
+
+
+/* MOBILE STYLES */
+@media only screen and (min-width: 425px) {
+	.purpose{
+		padding: 1em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+  h1{
+    font-size: 2.5em;
+  }
+
+  h2{
+    font-size: 2em;
+  }
+
+  h3, h4{
+    font-size: 1.5em;
+  }
+
+	.content_bio-upper .content_bio-upper-text{
+	  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+	}
+
+  .designStandards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1em !important;
+  }
+
+  .designStandards h2{
+    grid-column: 1/span all;
+  }
+
+	.content_bio-upper{
+		text-align: center;
+	}
+
+  .colors_top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    justify-items: center;
+  }
+
+  .colors_bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+    justify-items: center;
+  }
+
+  .colors h2{
+    grid-column: 1/span all;
+  }
+
+  .color:nth-child(4){
+    grid-row: 2;
+    grid-col: 1;
+  }
+
+  footer .maxScreenSize {
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+  }
+
+  .social{
+    margin-bottom: 0;
+  }
+
+  .footer_nav{
+    grid-column: 3;
+    grid-column-gap: 1em;
+  }
+
+  iframe.youTube {
+    height: 25em;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+	h1{
+    font-size: 3em;
+  }
+
+  h2{
+    font-size: 2.25em;
+  }
+
+  h3{
+    font-size: 1.75em;
+  }
+
+  header{
+		grid-column: 1/span 2;
+	}
+
+	header p, .navigationLinks a {
+	    font-size: 2em;
+	}
+
+	.content{
+		grid-column: 2;
+	}
+
+	.content_bio-upper {
+	    display: grid;
+	    grid-template-columns: 35% 55%;
+	    grid-column-gap: 3em;
+	    text-align: left;
+	}
+
+	.content_bio-upper span{
+		grid-template-columns: 100%;
+	}
+
+	.content_bio-upper h2, .content_bio-upper p{
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+	.content_bio-upper_img {
+	    border-radius: 50%;
+	    max-width: 50%;
+	    align-self: center;
+	}
+
+	.purpose{
+		padding: 2em;
+	}
+
+	.purpose .content{
+		padding: 1em;
+	}
+
+  .navigationLinks a.nav_indent {
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (min-width: 1440px) {
+	.purpose {
+	    padding: 2em;
+	}
+}

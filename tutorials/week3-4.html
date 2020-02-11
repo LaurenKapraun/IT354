@@ -33,10 +33,15 @@
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
 		            	<a href="../index.html">Home</a>
-		            	<a href="../tutorials.html" >Tutorials</a>
-		            	<a href="week1.html" class="nav_indent">Week 1</a>
-		            	<a href="week3-4.html" class="currentPage nav_indent">Week 03-04</a>
-		            	<a href="ECMAscript.html" class="nav_indent">ECMAscript</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../videos.html">Videos</a>
+	        		</nav>
+				</div>
+
+				<div class="header_nav nav_large">
+					<nav class="navigationLinks" id="navlinks">
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
 		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
@@ -44,7 +49,7 @@
 		</header>
 
 		<div class="content maxScreenSize">
-			<h1>Week 03-04 Lessons</h1>
+			<h1>Functions &amp; Other Functions</h1>
 			<div class="tab">
 			  <button class="tablinks" onclick="openTab(event, 'functions')" id="defaultOpen">Functions</button>
 			  <button class="tablinks" onclick="openTab(event, 'otherTopics_wk3')">Other Topics</button>
@@ -53,16 +58,151 @@
 			<div id="functions" class="tabcontent">
 			  <h2>Functions</h2>
 			  <h3>Named Functions</h3>
+			  <p>A named function is also known as a function declaration. To form a named function, you will need the <span class="code">function</span> keyword, a function name, a list of parameters in parenthesis, and a pair of curly braces.</p>
+
+			  <p>The syntax is as follows: <br>
+			  	<span class="code">function [functionName]([param1], [param2]) { <br>
+			  		statement(s) <br>
+			  	}</span>
+
+			  <pre class="line-numbers">
+					<code class="language-javascript">function add(a, b) { return a + b; }
+
+					add(3,4); //returns 7</code>
+				</pre>
+
 			  <h3>Function Expression</h3>
+			  <p>Function Expressions are similar to Named Functions, but it does not start with the keyword <span class="code">function</span>. These are used to define a function as part of a larger expression, and typically use variables. Below, you can see the subtle difference between a Named Function vs. a Function Expression.</p>
+
+			  <pre class="line-numbers">
+					<code class="language-javascript">//****** Named Function ******//
+					function add(a, b) { return a + b; }
+
+					add(3,4); //returns 7
+
+					//****** Function Expression ******//
+					var addVariable = function add(a, b) { return a + b; }
+
+					addVariable(3,4); //returns 7</code>
+				</pre>
+
 			  <h3>Arrow Functions</h3>
+			  <p>Arrow Functions are used as a short syntax to write functions. It defines parameters in a set of parenthesis, followed by what is called a fat arrow <span class="code">=></span>, and a pair of curly braces. The Arrow Function does not require the <span class="code">function</span> keyword, <span class="code">return</span> keyword, or <span class="code">curly brackets</span> to run.</p>
+
+			  <p>Below you can see the progression from <strong>Named Functions</strong> to <strong>Function Expressions</strong>, to finally <strong>Arrow Functions</strong>.
+
+			  <pre class="line-numbers">
+					<code class="language-javascript">//****** Named Function ******//
+					function add(a, b) { return a + b; }
+
+					add(3,4); //returns 7
+
+					//****** Function Expression ******//
+					var addVariable = function add(a, b) { return a + b; }
+
+					addVariable(3,4); //returns 7
+
+					//****** Arrow Functions ******//
+					var addArrow = (a, b) => a+b;
+
+					addArrow(3,4); //returns 7</code>
+				</pre>
 			</div>
 
 			<div id="otherTopics_wk3" class="tabcontent">
 			  <h2>Other Topics</h2>
-			  <h3>Optional Arguements</h3>
+			  <h3>Optional Arguments</h3>
+			  <p>Optional Arguments can be declared using the Logical Or Operator (<span class="code">||</span>), or by using the Assignment Operator (<span class="code">=</span>). These are used to assign a value to a variable if they are undefined when called.</p>
+
+			  <pre class="line-numbers">
+			  	<code class="language-javascript">//****** Logical or Operator ******//
+			  function logicalOr(a,b) {
+			  			b = b || 0;
+			  			console.log("a = " + a + "\nb = " + b);
+			  }
+
+					logicalOr(3,4); //returns a = 3, b = 4
+					logicalOr(3); //returns a = 3, b = 0
+
+					//****** Assignment Operator ******//
+					function assignOperator(a, b=0) {
+			  			console.log("a = " + a + "\nb = " + b);
+			  }
+
+					assignOperator(3,4) //returns a = 3, b = 4
+					assignOperator(3) //returns a = 3, b = 0</code>
+			  </pre>
+
 			  <h3>Rest Parameters</h3>
+			  <p>Rest Parameters allow us to represent an unlimited number of arguments as an array. They enable a function to be called with any number of arguments, no matter how it was initially defined.</p>
+
+			  <p>Below is an example displaying the difference of running a function with and without a Rest Parameter.</p>
+			  <pre class="line-numbers">
+			  	<code class="language-javascript">//****** No Rest Parameter ******//
+			  function noRest(a,b) {
+			  			return a*b;
+			  }
+
+					noRest(1,2); //returns 2
+					noRest(1,2,3,4,5,6,7,8,9,10); //returns 2
+
+					//****** Rest Parameter ******//
+					function restFunction(...input) { 
+					    let multiply = 1; 
+					    for (let i of input) { 
+					        multiply*=i; 
+					    } 
+					    return multiply; 
+					}
+
+					restFunction(1,2); //returns 2 
+					restFunction(1,2,3,4,5); //returns 120</code>
+			  </pre>
+
 			  <h3>Scope</h3>
-			  <h3>Nested Funcitons</h3>
+			  <p>Scope defines the visibility of variables, functions, and objects in different parts of your code. In JavaScript, there is a local and global scope. </p>
+
+			  <p>In local scope, the variables are defined inside the function, while global scope variables are defined outside of the function.</p>
+			  <pre class="line-numbers">
+			  	<code class="language-javascript">//****** Global Scope ******//
+			  var myName = `Lauren`;
+					console.log(myName); //returns Lauren
+
+					function displayName() {
+						//The variable myName is accessible within this function
+						console.log(myName); 
+					}
+
+					displayName(); //still returns Lauren
+
+					//****** Local Scope ******//
+					function displayOtherName() {
+						var otherName = `Luna`;
+						console.log(otherName);
+					}
+
+					displayOtherName(); //returns Luna
+
+					//Running the following line will throw an error, because "otherName" is a local variable in the function
+					console.log(otherName);</code>
+			  </pre>
+
+			  <h3>Nested Functions</h3>
+			  <p>A Nested Function is a function that is created inside of another function. Nested Functions can access any arguments and variables that were declared in the function it is nested in. </p>
+
+			  <pre class="line-numbers">
+			  	<code class="language-javascript">let firstName = `Lauren`
+					let lastName = `Kapraun`
+
+					function nestedFunction(fN, lN) {
+					  function createFullName() {
+					    return firstName + " " + lastName
+					  }
+					  console.log("My name is: " + createFullName());
+					}
+
+					nestedFunction(firstName, lastName);</code>
+			  </pre>
 			</div>
 
 		</div>

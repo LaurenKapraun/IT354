@@ -50,8 +50,227 @@
 
 		<div class="content maxScreenSize">
 			<h1>ECMAscript</h1>
-			
 
+			<p>ECMAScript is a scripting language specification standardized by ECMA International, that first appeared in 1997. This script accounts for 30% of all standards and Technical Reports downloaded from the ECMA website. While the ECMA-262 1st Edition didn't release until June of 1997, development began at Netscape in 1994 ("Welcome to Ecma International").</p>
+
+			<p>ECMAScript 1 (ES1)was the first edition released in 1997, and Internet Explorer 4 was the first browser to support this script. Then in 1998, ECMAScript 2 (ES2) was released and contained only editorial changes for ES1. In 1999, Internet Explorer 5 was the first browser to become compatible with ES2 ("ECMAScript 2015").</p>
+
+			<p>The next major version release of ECMAScript was in 1999, with the release of ECMAScript 3 (ES3). This release added regular expressions, along with try/catch. It wasn't until 2000 that Internet Explorer 5.5 became compatible with ES3. </p>
+			<div style="width:85%;margin:0 auto;text-align: center;">
+				<pre class="line-numbers">
+						<code class="language-javascript">//****** Try/Catch Syntax ******//
+						TryStatement[Yield, Await, Return]:
+							try Block[?Yield, ?Await, ?Return] Catch[?Yield, ?Await, ?Return]
+							try Block[?Yield, ?Await, ?Return] Finally[?Yield, ?Await, ?Return]
+							try Block[?Yield, ?Await, ?Return] Catch[?Yield, ?Await, ?Return]
+							Finally[?Yield, ?Await, ?Return]
+						Catch[Yield, Await, Return]:
+							catch(CatchParameter[?Yield, ?Await])Block[?Yield, ?Await, ?Return]
+							catchBlock[?Yield, ?Await, ?Return]
+						Finally[Yield, Await, Return]:
+									finallyBlock[?Yield, ?Await, ?Return]
+						CatchParameter[Yield, Await]:
+							BindingIdentifier[?Yield, ?Await]
+							BindingPattern[?Yield, ?Await]</code>
+					</pre>
+				<p><em><strong>The above can be found at: <a href="https://tc39.es/ecma262/" target="_blank">tc39.es/ecma262</a></strong></em></p>
+			</div>
+
+			<p>ECMAScript 4 was never released, and ECMA International jumped straight to ECMAScript 5 (ES5) in 2009. This update added strict mode, JSON support, String.trim(), Array.isArray(), and Array Iteration Methods. Internet Explorer 9 was the first browser to support ES5, with the exception of "use strict" ("JavaScript Versions"). ES5 was the first version that was compatible with all of the major browsers, including Chrome, Firefox, IE, IE/Edge, Safari, and Opera. Then in 2011, ES5.1 was released with editorial changes. </p>
+
+			<div style="width:85%;margin:0 auto;text-align: center;">
+				<pre class="line-numbers">
+						<code class="language-javascript">//****** String.trim() ******//
+						const trimThis = '   Trim the white space!   ';
+						console.log(trimThis); //returns "   Trim the white space!   "
+						console.log(trimThis.trim()); //returns "Trim the white space!"
+
+						//****** Array.isArray() ******//
+						Array.isArray([]); //returns true
+						Array.isArray(new Array(5)); //returns true
+						Array.isArray(); //returns false
+						Array.isArray(null); //returns false</code>
+					</pre>
+				
+			</div>
+
+			<p>Starting in 2015, ECMA International started naming ECMAScript by year instead of by version. This lead to the next major version release, ECMAScript 2015 (ES6). This version added let and const., default parameter values, Array.find(), and Array.findIndex(). All of the major browsers are compatible with ES6, just as ES5, except for Internet Explorer ("ECMAScript 2015"). </p>
+
+			<div style="width:85%;margin:0 auto;text-align: center;">
+				<pre class="line-numbers">
+						<code class="language-javascript">//****** let & const. ******//
+						const exampleArray = ["Lauren", "Kapraun", "Luna", "Louise"];
+
+						for (let i = 0; i < exampleArray.length; i++){
+							//Returns all elements in the array
+							console.log(exampleArray[i]);
+						}
+
+						//****** Default Parameter Values ******//
+						function add(a, b = 0) {
+							return a + b;
+						}
+
+						console.log(add(1,3)) //returns 4
+						console.log(add(15)) //returns 15
+						console.log(add(1, undefined)) //returns 1
+
+						//****** Array.find() ******//
+						const findInArray = [
+							{fName: 'Lauren', lName: 'Kapraun'},
+							{fName: 'Luna', lName: 'Louise'}
+						];
+
+						function findLuna(luna){
+							return luna.fName === 'Luna';
+						}
+
+						//returns { fName: "Luna", lName: "Louise" }
+						console.log(findInArray.find(findLuna));
+
+						//****** Array.findIndex() ******//
+						const index = exampleArray.findIndex(findLuna => findLuna === "Luna");
+
+						console.log(index); //returns 2
+						console.log(exampleArray[index]); //returns "Luna"</code>
+					</pre>
+			</div>
+
+			<p>In 2016, ECMAScript 2016 (ES7) was released and added the exponential operator (**) and the Array.prototype.includes. The only browsers that are currently compatible with ES7 are Chrome 68 and Opera 55.  Then in 2017, the ECMAScript 2017 (ES8) was released adding string padding, new Object properties, Async functions, and shared memory. In 2018, ECMA 2018 (ES9) added rest/spread properties, Asynchronous iteration, Promise.finally(), and additions to RegExp ("JavaScript Versions").</p>
+
+			<div style="width:85%;margin:0 auto;text-align: center;">
+				<pre class="line-numbers">
+						<code class="language-javascript">//****** exponential operator (**) ******//
+							var a = 2;
+							var b = 4;
+							console.log(a**b); //returns 16
+
+						//****** Array.prototype.includes ******//
+						const exampleArray = ["Lauren", "Kapraun", "Luna", "Louise"];
+						console.log(exampleArray.includes(1)); //returns false
+						console.log(exampleArray.includes('Luna')); //returns true
+
+						//****** string padding ******//
+						const stringToPad = 'Lauren';
+						console.log(stringToPad.padStart(10, 'Hi, ')); //returns Hi, Lauren
+						console.log(stringToPad.padEnd(19, ' is studying.')); //returns Lauren is studying.
+
+						//****** Async functions ******//
+						function resolveAfter2Seconds() {
+						  	return new Promise(resolve => {
+						    	setTimeout(() => {
+						      		resolve('resolved');
+						    	}, 2000);
+						  	});
+						}
+
+						async function asyncCall() {
+						  console.log('calling');
+						  const result = await resolveAfter2Seconds();
+						  console.log(result);
+						}
+
+						//returns "calling"
+						//AFTER 2 seconds, it returns "resolved"
+						asyncCall(); 
+
+						//****** rest/spread properties ******//
+						//Rest
+						let {a,b,...c} = {a: 1, b:2, c:3, d:4, e: 5};
+						console.log(a); //returns 1
+						console.log(b); //returns 2
+						console.log(c); //returns { c: 3, d: 4, e: 5 }
+
+						//Spread
+						let spreadRest = {a,b,...c};
+						console.log(spreadRest); //returns { a: 1, b: 2, c: 3, d: 4, e: 5 }
+
+						//****** Promise.finally() ******//
+						//Syntax
+						//onFinally is a function when the Promise is settled
+						p.finally(onFinally)
+						
+						//OR
+						p.finally(function() {
+							//settled (fulfilled or rejected)
+						});</code>
+					</pre>
+				<p><em><strong>The Async Function example can be found at: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">developer.mozilla.org</a></strong></em></p>
+			</div>
+
+			<p>Finally, in 2019, ECMAScript 2019 (ES10) was released. The new features with this release include Array.Flat(), Array.flatMap(), Object.fromEntries(), String.trimStart(), String.trimEnd(), Optional Catch Binding, Function.toString, Symbol.description, JSON.Stringify(), Array.Sort stability, and JSON Superset (Ganesh 2019).</p>
+
+			<div style="width:85%;margin:0 auto;text-align: center;">
+				<pre class="line-numbers">
+						<code class="language-javascript">//****** Array.Flat()/Array.flatMap() ******//
+						var flatArrayEx = [[1,2],3,4];
+							
+						console.log(flatArrayEx); //returns [[1, 2], 3, 4]
+						console.log(flatArrayEx.flat()); //returns [1, 2, 3, 4]
+
+						var flatMapEx = [1,2,3,4];
+						console.log(flatMapEx.map(x => [x-2])); //returns [[-1], [0], [1], [2]]
+						console.log(flatMapEx.flatMap(x => [x-2])) //returns [-1, 0, 1, 2]
+						console.log(flatMapEx.flatMap(x => [[x-2]])) //returns [[-1], [0], [1], [2]]
+
+						//****** Object.fromEntries() ******//
+						var names = {
+							name1: 'Lauren',
+							name2: 'Luna'
+						}
+
+						var entries = Object.entries(names);
+						var fromEntries = Object.fromEntries(entries);
+
+						console.log(entries); //returns [ [ 'name1', 'Lauren' ], [ 'name2', 'Luna' ] ]
+						console.log(fromEntries); //returns { name1: "Lauren", name2: "Luna" }
+
+						//****** String.trimStart()/String.trimEnd() ******//
+						const trimThis = '   Trim the white space!   ';
+
+						console.log(trimThis); //returns "   Trim the white space!   "
+						console.log(trimThis.trimStart()); //returns "Trim the white space!   "
+						console.log(trimThis.trimEnd()); //returns "   Trim the white space!"
+
+						//****** Function.toString ******//
+						function showThisFunction(text) {
+						  var example = text;
+						  console.log(example)
+						}
+
+						console.log(showThisFunction.toString());
+						/* returns: 
+
+						"function showThisFunction(text) {
+  							var example = text;
+  							console.log(example)
+  						}"
+
+  						*/
+
+						//****** Symbol.description ******//
+						console.log(Symbol('This is a description')); //returns Symbol(This is a description)
+						console.log(Symbol('This is a description').description); //returns "This is a description"
+						console.log(Symbol('').description); //returns ""
+						console.log(Symbol().description); //returns undefined
+
+						//****** JSON.Stringify() ******//
+						console.log(JSON.stringify({ a: 1, b: 2 })); //returns {"a":1,"b":2}
+						console.log(JSON.stringify(true)); //returns "true"
+						console.log(JSON.stringify('String in a string?')); //returns ""String in a string?""</code>
+					</pre>
+			</div>
+
+			<h2 class="ref">References</h2>
+			<ol>
+				<li class="ref_item">“ECMAScript 2015.” w3schools.Com, <a href="https://www.w3schools.com/js/js_es6.asp" target="_blank">www.w3schools.com/js/js_es6.asp</a>.</li>
+
+				<li class="ref_item">Ganesh, Selva. “JavaScript: What’s New in ECMAScript 2019 (ES2019)/ES10?” Medium, Medium, 8 Feb. 2019, <a href="https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b" target="_blank">medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b</a>.</li>
+
+				<li class="ref_item">“JavaScript Versions.” w3schools.Com, <a href="https://www.w3schools.com/js/js_versions.asp" target="_blank">www.w3schools.com/js/js_versions.asp</a>.</li>
+
+				<li class="ref_item">“Welcome to Ecma International.” Ecma International, <a href="http://www.ecma-international.org/" target="_blank">www.ecma-international.org</a>.</li>
+			</ol>
 		</div>
 
 		<footer>

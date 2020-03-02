@@ -33,8 +33,8 @@
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
 		            	<a href="../index.html">Home</a>
-		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
-		            	<a href="../articles.html">Articles</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
 		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
@@ -42,8 +42,8 @@
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
 		            	<a href="../index.html">Home</a>
-		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
-		            	<a href="../articles.html">Articles</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
 		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
@@ -51,42 +51,114 @@
 		</header>
 
 		<div class="content maxScreenSize">
-			<h1>Objects</h1>
+			<h1>Responsive Web Design &amp; Usability</h1>
 
 			<div class="tab">
-			  <button class="tablinks" onclick="openTab(event, 'createObject')" id="defaultOpen">Creating Objects</button>
-			  <button class="tablinks" onclick="openTab(event, 'objectFeatures')">Accessing &amp; Setting Features</button>
+			  <button class="tablinks" onclick="openTab(event, 'responsiveWeb')" id="defaultOpen">Responsive Websites</button>
+			  <button class="tablinks" onclick="openTab(event, 'nineUX')">9 Usability Mistakes</button>
+			  <button class="tablinks" onclick="openTab(event, 'thirtyUX')">30 Usability Issues</button>
+			  <button class="tablinks" onclick="openTab(event, 'fiveUX')">5 Usability Principles</button>
 			</div>
 
-			<div id="createObject" class="tabcontent">
-				<h2>Creating Objects</h2>
-				<h3>Using `new Object()`</h3>
-				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
-				</pre>
+			<div id="responsiveWeb" class="tabcontent">
+				<h2>Building a Responsive Website with HTML &amp; CSS</h2>
+				<p><strong>For this essay, I am writing as I follow along with the video displayed below.</strong></p>
 
-				<h3>With Constructtors</h3>
-				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
-				</pre>
+				<p>At this point, we have built the HTML and CSS files, along with linking the font-family from Google Fonts. I personally use google fonts when building websites. When using fonts stored with Google instead of saving the physical font files in the site, it typically increases your site load time.</p>
 
-				<h3>With Classes</h3>
-				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
-				</pre>
-			</div>
+				<p>While creating the header, I noticed that he created a heading element for the logo, and made it an <span class="code">&lt;h4&gt;</span> element. This is typically bad practice because when a screen reader goes through a web page, it goes in the order of the headings. In this case, I personally would have made it a separate <span class="code">&lt;div&gt;</span>, and applied the logo class to the div.</p>
 
-			<div id="objectFeatures" class="tabcontent">
-				<h2>Accessing &amp; Setting Features</h2>
-				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
-				</pre>
+				<p>Moving on during the tutorial, I found it interesting that he used margin auto to center the header. Typically, I see most examples use <span class="code">margin: 0 auto;</span>. I have used background gradient styles before but found it interesting that you could clip the gradient and have it apply to just the text.</p>
+
+				<p>I am surprised that he didn't design the site mobile-first because that is the direction most front-end developers are going in, but overall, I thought the video was good and helpful.</p>
+
+				<a href="../files/responsiveUsability-YouTube" class="btn" target="_blank">Download Files Here</a>
+
+				<iframe src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			
+			<div id="nineUX" class="tabcontent">
+				<h2>9 Common Usability Mistakes In Web Design</h2>
+				<h3>1. Pagination Used For The Wrong Purpose</h3>
+				<p>This honestly has to be one of my biggest pet peeves. I am the type of person that gets sucked into clicking on a story link while browsing through FaceBook, only to be greeted with a story that has each paragraph separated using pagination. Most times, I find that these sites also use large images and ads causing the site to load very slowly, and at least for me, the site "crashes". This forces the user to re-open the article, which ultimately gives the site more page views, unless the user is like me, and decides that the article isn't worth re-opening the article and going on with their day.</p>
+
+				<p>When used properly, this feature can be very useful. Just as they mentioned in the article, it is a great idea to list products and blog posts using pagination.</p>
+
+				<h3>2. Content That Is Difficult To Scan</h3>
+				<p>This topic is very important when it comes to web development. While it isn't always possible, I usually recommend that the copy be written and well thought out before the design even begins. This way, the designer can keep the copy in mind when that are creating the page layouts.</p>
+
+				<p>Because users jump from one piece of content to another, it is important that the designer/developer can effectively present the information on a few points of focus. This could be accomplished by using different colors, font-sizes, images, icons, buttons, etc.</p>
+
+				<p>One phrase that has always stuck with me is: <span style="color:#cc99cd;"><em>"You want to design for content, not create content for the design."</em></span></p>
+
+				<h3>3. Long Registration Forms</h3>
+				<p>Because users want information fast and are more reluctant to give out a lot of their personal information, it is important to keep registration forms short and concise. In terms of registering for an account or email marketing campaign, you can typically just ask for name and email. Then once they are registered, you can give users the option to provide more information about themselves in a profile page area on the site.</p>
+
+				<a href="https://www.smashingmagazine.com/2009/02/9-common-usability-blunders/" class="btn" target="_blank">Full Article</a>
+			</div>
+
+			<div id="thirtyUX" class="tabcontent">
+				<h2>30 Usability Issues To Be Aware Of</h2>
+				<h3>1. 7±2 Principle</h3>
+				<p>I have definitely heard of this principle before, and think that it is very important to apply to website navigations. Typically, if you have more than 5 or 7 navigation items, your site is becoming too complex. Users want to quickly glance at the navigation and select the item that most closely relates to what they are looking for.</p>
+
+				<p>For example, if you had in your navigation 
+					<br><br>
+					<span class="code">item1, item2, about, location, contact, message us</span>
+					<br><br>
+					and a user was trying to find the best way to get in touch, they may try contact, location, message us, or even about. However the same can be said if there aren't enough navigation items. If you had a navigation including
+					<br><br>
+					<span class="code">item1, item2, about us</span>
+					<br><br>
+				and a user was trying to find a way to get in touch with you, they may not inherently know that they need to select about us.</p>
+
+
+				<h3>2. 3-Click-Rule</h3>
+				<p>Going along with the first issue, it is important that a user can access the information they are looking for in 3-clicks or less. We currently implement this at the office I work for now. We know that most people want to be able to access the information they need quickly, and if they can't find it within 3 clicks, they move on to another site.</p>
+
+				<h3>3. </h3>
+				<p>Text</p>
+
+				<h3>4. </h3>
+				<p>Text</p>
+
+				<h3>5. </h3>
+				<p>Text</p>
+
+				<h3>6. </h3>
+				<p>Text</p>
+
+				<h3>7. </h3>
+				<p>Text</p>
+
+				<h3>8. </h3>
+				<p>Text</p>
+
+				<h3>9. </h3>
+				<p>Text</p>
+
+				<h3>10. </h3>
+				<p>Text</p>
+			</div>
+
+			<div id="fiveUX" class="tabcontent">
+				<h3>1. Availability and Accessibility</h3>
+				<p>Text</p>
+
+				<h3>2. Clarity</h3>
+				<p>Text</p>
+
+				<h3>3. Learnability</h3>
+				<p>Text</p>
+
+				<h3>4. Credibility</h3>
+				<p>Text</p>
+
+				<h3>5. Relevancy</h3>
+				<p>Text</p>
+				
+				<a href="https://www.crazyegg.com/blog/principles-website-usability/" class="btn" target="_blank">Full Article</a>
+			</div>
 		</div>
 
 		<footer>
@@ -108,8 +180,8 @@
 
 				<section class="footer_nav">
 					<a href="../index.html">Home</a>
-					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
-					<a href="../articles.html">Articles</a>
+					<a href="../tutorials.html">Tutorials</a>
+					<a href="../articles.html" class="footer_currentPage">Articles</a>
 					<a href="../videos.html">Videos</a>
 				</section>
 

@@ -1,4 +1,4 @@
-var acc = document.getElementsByClassName("accordion");
+/*var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
@@ -11,4 +11,12 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = "30em";
     } 
   });
-}
+}*/
+/*
+$(function() {
+  var $acc = $('.accordion').click(function() {
+    $acc.not(this).removeClass('active');
+    $(this).toggleClass('active');
+  });
+});
+*/

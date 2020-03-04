@@ -3,22 +3,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
+		<script src="../structure/js/header.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+
 	</head>
 
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -28,33 +32,87 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html" class="currentPage">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html" class="currentPage">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
 		<div class="content maxScreenSize">
-			<h1>Videos</h1>
-			<p>Check out the Video Playlist below! <span style="color:#cc99cd;"><strong>Click the Playlist Icon in the top right corner of the video to see other videos in the playlist.</strong></span></p>
+			<h1>Objects</h1>
 
-			<p>To view the playlist on YouTube, visit <a href="https://www.youtube.com/playlist?list=PLdt5KfrjEW9LLZEbNl0y4ZSV3CtCLS_SA" target="_blank">youtube.com/laurenkapraun</a>.</p>
-			
-			<iframe id="ytplayer" type="text/html"src="https://www.youtube.com/embed/?listType=playlist&list=PLdt5KfrjEW9LLZEbNl0y4ZSV3CtCLS_SA&color=white" frameborder="0" allowfullscreen class="youTube"></iframe>
-			
+			<div class="tab">
+			  <button class="tablinks" onclick="openTab(event, 'newObject')" id="defaultOpen">new Object()</button>
+			  <button class="tablinks" onclick="openTab(event, 'constructors')">Constructors</button>
+			  <button class="tablinks" onclick="openTab(event, 'classes')">Classes</button>
+			</div>
 
+			<div id="newObject" class="tabcontent">
+				<h2>Using `new Object()`</h2>
+				<p>In JavaScript, an object is a collection of named values, and the named values are called properties. In this first example, you set a <span class="code">const variable</span> equal to a <span class="code">new Object()</span>. Then you can add values to the object by calling the <span class="code"> variable.namedVlaue</span> and setting it equal to the value. </p>
+
+				<p>To display the values stored in the object, you would use <span class="code">${variable.namedValue}</span> in the <span class="code">console.log</span>.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">const aboutMe = new Object();
+					aboutMe.firstName = 'Lauren';
+					aboutMe.title = "Graduate Student";
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ${aboutMe.firstName}, and I am a ${aboutMe.title}.`);</code>
+				</pre>
+			</div>
+
+			<div id="constructors" class="tabcontent">
+				<h2>With Constructors</h2>
+				<p>A second way to create a new Object is by using a Constructor. When creating an Object with a Constructor, you create a <span class="code">function</span> with the named values in the parenthesis of the variable. While executing, every function has a reference to its current execution context by using the <span class="code">this</span> keyword.</p>
+
+				<p>Then, outside of the function, you would create a constant variable and assign it to a <span class="code">new object</span>, and insert the values within the parenthesis. When writing out the function, the <span class="code">new</span> keyword turns the function call into a constructor call.</p>
+
+				<p>To display the values stored in the object, you would use <span class="code">${variable.namedValue}</span> in the <span class="code">console.log</span>.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">function aboutMe(firstName, title) {
+					  this.firstName = firstName;
+					  this.title = title;
+					}
+
+					const me = new aboutMe('Lauren', 'Graduate Student')
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ${me.firstName}, and I am a ${me.title}.`)</code>
+				</pre>
+			</div>
+
+			<div id="classes" class="tabcontent">
+				<h2>With Classes</h2>
+				<p>The final example of how to create an object is by using a Class. Creating Objects with classes is very similar to constructors, in that you create a <span class="code">class variable</span>, and then place the constructor with the named variables on the inside. Then you would create a new <span class="code">const variable</span> and assign it to a new Object, and insert the values within the parenthesis.</p>
+
+				<p>To display the values stored in the object, you would use <span class="code">constVariable.namedValue</span> in the <span class="code">console.log</span>.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">class aboutMe{
+					  constructor(firstName, title) {
+					    this.firstName = firstName;
+					    this.title = title;
+					  }
+					}
+
+					const me = new aboutMe('Lauren', 'Graduate Student')
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ` + me.firstName + `, and I am a ` + me.title + `.`)</code>
+				</pre>
+			</div>
 			
 		</div>
 
@@ -76,15 +134,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html">Home</a>
-					<a href="tutorials.html">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html" class="footer_currentPage">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
+					<a href="../articles.html">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
-		<script src="structure/js/accordion.js"></script>
+
+		<script src="../structure/js/pageTabs.js"></script>
+
 	</body>
 </html>

@@ -34,6 +34,7 @@
 
 		            	<a href="../index.html">Home</a>
 		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
 		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
@@ -42,6 +43,7 @@
 					<nav class="navigationLinks" id="navlinks">
 		            	<a href="../index.html">Home</a>
 		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
 		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
@@ -52,7 +54,9 @@
 			<h1>Functions &amp; Other Topics</h1>
 			<div class="tab">
 			  <button class="tablinks" onclick="openTab(event, 'functions')" id="defaultOpen">Functions</button>
-			  <button class="tablinks" onclick="openTab(event, 'otherTopics_wk3')">Other Topics</button>
+			  <button class="tablinks" onclick="openTab(event, 'optionalArguments')">Optional Arguments</button>
+			  <button class="tablinks" onclick="openTab(event, 'restParameters')">Rest Parameters</button>
+			  <button class="tablinks" onclick="openTab(event, 'scope')">Scope</button>
 			</div>
 
 			<div id="functions" class="tabcontent">
@@ -107,11 +111,27 @@
 
 					addArrow(3,4); //returns 7</code>
 				</pre>
+
+			  <h3>Nested Functions</h3>
+			  <p>A Nested Function is a function that is created inside of another function. Nested Functions can access any arguments and variables that were declared in the function it is nested in. </p>
+
+			  <pre class="line-numbers">
+			  	<code class="language-javascript">let firstName = `Lauren`
+					let lastName = `Kapraun`
+
+					function nestedFunction(fN, lN) {
+					  function createFullName() {
+					    return firstName + " " + lastName
+					  }
+					  console.log("My name is: " + createFullName());
+					}
+
+					nestedFunction(firstName, lastName);</code>
+			  </pre>
 			</div>
 
-			<div id="otherTopics_wk3" class="tabcontent">
-			  <h2>Other Topics</h2>
-			  <h3>Optional Arguments</h3>
+			<div id="optionalArguments" class="tabcontent">
+			  <h2>Optional Arguments</h2>
 			  <p>Optional Arguments can be declared using the Logical Or Operator (<span class="code">||</span>), or by using the Assignment Operator (<span class="code">=</span>). These are used to assign a value to a variable if they are undefined when called.</p>
 
 			  <pre class="line-numbers">
@@ -132,8 +152,10 @@
 					assignOperator(3,4) //returns a = 3, b = 4
 					assignOperator(3) //returns a = 3, b = 0</code>
 			  </pre>
+			</div>
 
-			  <h3>Rest Parameters</h3>
+			<div id="restParameters" class="tabcontent">
+			  <h2>Rest Parameters</h2>
 			  <p>Rest Parameters allow us to represent an unlimited number of arguments as an array. They enable a function to be called with any number of arguments, no matter how it was initially defined.</p>
 
 			  <p>Below is an example displaying the difference of running a function with and without a Rest Parameter.</p>
@@ -158,8 +180,10 @@
 					restFunction(1,2); //returns 2 
 					restFunction(1,2,3,4,5); //returns 120</code>
 			  </pre>
+			</div>
 
-			  <h3>Scope</h3>
+			<div id="scope" class="tabcontent">
+			  <h2>Scope</h2>
 			  <p>Scope defines the visibility of variables, functions, and objects in different parts of your code. In JavaScript, there is a local and global scope. </p>
 
 			  <p>In local scope, the variables are defined inside the function, while global scope variables are defined outside of the function.</p>
@@ -186,23 +210,6 @@
 					//Running the following line will throw an error, because "otherName" is a local variable in the function
 					console.log(otherName);</code>
 			  </pre>
-
-			  <h3>Nested Functions</h3>
-			  <p>A Nested Function is a function that is created inside of another function. Nested Functions can access any arguments and variables that were declared in the function it is nested in. </p>
-
-			  <pre class="line-numbers">
-			  	<code class="language-javascript">let firstName = `Lauren`
-					let lastName = `Kapraun`
-
-					function nestedFunction(fN, lN) {
-					  function createFullName() {
-					    return firstName + " " + lastName
-					  }
-					  console.log("My name is: " + createFullName());
-					}
-
-					nestedFunction(firstName, lastName);</code>
-			  </pre>
 			</div>
 
 		</div>
@@ -227,6 +234,7 @@
 				<section class="footer_nav">
 					<a href="../index.html">Home</a>
 					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
+					<a href="../articles.html">Articles</a>
 					<a href="../videos.html">Videos</a>
 				</section>
 

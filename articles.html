@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="structure/prism.css" type="text/css" media="all">
+		<script src="structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
@@ -13,6 +15,8 @@
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+
 	</head>
 
 	<body>
@@ -30,8 +34,8 @@
 
 		            	<a href="index.html">Home</a>
 		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html" class="currentPage">Videos</a>
+		            	<a href="#" class="currentPage">Articles</a>
+		            	<a href="videos.html">Videos</a>
 	        		</nav>
 				</div>
 
@@ -39,23 +43,17 @@
 					<nav class="navigationLinks" id="navlinks">
 		            	<a href="index.html">Home</a>
 		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html" class="currentPage">Videos</a>
+		            	<a href="#" class="currentPage">Articles</a>
+		            	<a href="videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
-		<div class="content maxScreenSize">
-			<h1>Videos</h1>
-			<p>Check out the Video Playlist below! <span style="color:#cc99cd;"><strong>Click the Playlist Icon in the top right corner of the video to see other videos in the playlist.</strong></span></p>
-
-			<p>To view the playlist on YouTube, visit <a href="https://www.youtube.com/playlist?list=PLdt5KfrjEW9LLZEbNl0y4ZSV3CtCLS_SA" target="_blank">youtube.com/laurenkapraun</a>.</p>
-			
-			<iframe id="ytplayer" type="text/html"src="https://www.youtube.com/embed/?listType=playlist&list=PLdt5KfrjEW9LLZEbNl0y4ZSV3CtCLS_SA&color=white" frameborder="0" allowfullscreen class="youTube"></iframe>
-			
-
-			
+		<div class="content two_col maxScreenSize">
+			<h1>Articles</h1>
+        	<p><a href="articles/ECMAscript.html" class="btn">1. ECMAscript</a></p>
+        	<p><a href="articles/responsiveUsability.html" class="btn">2. Responsive Web Design &amp; Usability</a></p>
 		</div>
 
 		<footer>
@@ -78,13 +76,15 @@
 				<section class="footer_nav">
 					<a href="index.html">Home</a>
 					<a href="tutorials.html">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html" class="footer_currentPage">Videos</a>
+					<a href="articles.html" class="footer_currentPage">Articles</a>
+					<a href="videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
-		<script src="structure/js/accordion.js"></script>
+
+		<script src="structure/js/pageTabs.js"></script>
+
 	</body>
 </html>

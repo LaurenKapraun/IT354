@@ -54,36 +54,63 @@
 			<h1>Objects</h1>
 
 			<div class="tab">
-			  <button class="tablinks" onclick="openTab(event, 'createObject')" id="defaultOpen">Creating Objects</button>
-			  <button class="tablinks" onclick="openTab(event, 'objectFeatures')">Accessing &amp; Setting Features</button>
+			  <button class="tablinks" onclick="openTab(event, 'newObject')" id="defaultOpen">new Object()</button>
+			  <button class="tablinks" onclick="openTab(event, 'constructors')">Constructors</button>
+			  <button class="tablinks" onclick="openTab(event, 'classes')">Classes</button>
 			</div>
 
-			<div id="createObject" class="tabcontent">
-				<h2>Creating Objects</h2>
-				<h3>Using `new Object()`</h3>
-				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
-				</pre>
+			<div id="newObject" class="tabcontent">
+				<h2>Using `new Object()`</h2>
+				<p>In JavaScript, an object is a collection of named values, and the named values are called properties. In this first example, you set a <span class="code">const variable</span> equal to a <span class="code">new Object()</span>. Then you can add values to the object by calling the <span class="code"> variable.namedVlaue</span> and setting it equal to the value. </p>
 
-				<h3>With Constructtors</h3>
+				<p>To display the values stored in the object, you would use <span class="code">${variable.namedValue}</span> in the <span class="code">console.log</span>.</p>
 				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
-				</pre>
+					<code class="language-javascript">const aboutMe = new Object();
+					aboutMe.firstName = 'Lauren';
+					aboutMe.title = "Graduate Student";
 
-				<h3>With Classes</h3>
-				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ${aboutMe.firstName}, and I am a ${aboutMe.title}.`);</code>
 				</pre>
 			</div>
 
-			<div id="objectFeatures" class="tabcontent">
-				<h2>Accessing &amp; Setting Features</h2>
+			<div id="constructors" class="tabcontent">
+				<h2>With Constructors</h2>
+				<p>A second way to create a new Object is by using a Constructor. When creating an Object with a Constructor, you create a <span class="code">function</span> with the named values in the parenthesis of the variable. While executing, every function has a reference to its current execution context by using the <span class="code">this</span> keyword.</p>
+
+				<p>Then, outside of the function, you would create a constant variable and assign it to a <span class="code">new object</span>, and insert the values within the parenthesis. When writing out the function, the <span class="code">new</span> keyword turns the function call into a constructor call.</p>
+
+				<p>To display the values stored in the object, you would use <span class="code">${variable.namedValue}</span> in the <span class="code">console.log</span>.</p>
 				<pre class="line-numbers">
-					<code class="language-javascript">		
-					</code>
+					<code class="language-javascript">function aboutMe(firstName, title) {
+					  this.firstName = firstName;
+					  this.title = title;
+					}
+
+					const me = new aboutMe('Lauren', 'Graduate Student')
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ${me.firstName}, and I am a ${me.title}.`)</code>
+				</pre>
+			</div>
+
+			<div id="classes" class="tabcontent">
+				<h2>With Classes</h2>
+				<p>The final example of how to create an object is by using a Class. Creating Objects with classes is very similar to constructors, in that you create a <span class="code">class variable</span>, and then place the constructor with the named variables on the inside. Then you would create a new <span class="code">const variable</span> and assign it to a new Object, and insert the values within the parenthesis.</p>
+
+				<p>To display the values stored in the object, you would use <span class="code">constVariable.namedValue</span> in the <span class="code">console.log</span>.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">class aboutMe{
+					  constructor(firstName, title) {
+					    this.firstName = firstName;
+					    this.title = title;
+					  }
+					}
+
+					const me = new aboutMe('Lauren', 'Graduate Student')
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ` + me.firstName + `, and I am a ` + me.title + `.`)</code>
 				</pre>
 			</div>
 			

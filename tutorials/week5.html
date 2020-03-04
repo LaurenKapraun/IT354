@@ -55,6 +55,7 @@
 
 			<div class="tab">
 			  <button class="tablinks" onclick="openTab(event, 'newObject')" id="defaultOpen">new Object()</button>
+			  <button class="tablinks" onclick="openTab(event, 'literal')">Literal</button>
 			  <button class="tablinks" onclick="openTab(event, 'constructors')">Constructors</button>
 			  <button class="tablinks" onclick="openTab(event, 'classes')">Classes</button>
 			</div>
@@ -74,9 +75,25 @@
 				</pre>
 			</div>
 
+			<div id="literal" class="tabcontent">
+				<h2>Object Literal</h2>
+				<p>To simplify the first example, you can create an Object Literal. You will set a variable equal to a comma-separated list of named value pairs within curly braces. </p>
+
+				<p>To display the values stored in the object, you would use <span class="code">${variable.namedValue}</span> in the <span class="code">console.log</span>.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var aboutMe = {
+					  firstName: 'Lauren',
+					  title: 'Graduate Student'
+					}
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ${aboutMe.firstName}, and I am a ${aboutMe.title}.`);</code>
+				</pre>
+			</div>
+
 			<div id="constructors" class="tabcontent">
 				<h2>With Constructors</h2>
-				<p>A second way to create a new Object is by using a Constructor. When creating an Object with a Constructor, you create a <span class="code">function</span> with the named values in the parenthesis of the variable. While executing, every function has a reference to its current execution context by using the <span class="code">this</span> keyword.</p>
+				<p>A third way to create a new Object is by using a Constructor. When creating an Object with a Constructor, you create a <span class="code">function</span> with the named values in the parenthesis of the variable. While executing, every function has a reference to its current execution context by using the <span class="code">this</span> keyword.</p>
 
 				<p>Then, outside of the function, you would create a constant variable and assign it to a <span class="code">new object</span>, and insert the values within the parenthesis. When writing out the function, the <span class="code">new</span> keyword turns the function call into a constructor call.</p>
 

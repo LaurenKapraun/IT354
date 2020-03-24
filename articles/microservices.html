@@ -3,13 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
+		<script src="../structure/js/header.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -30,100 +32,72 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html" class="currentPage">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html" class="currentPage">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
 		<div class="content maxScreenSize">
-			<h1>Lauren Kapraun</h1>
-			<section>
-				<div class="content_bio-upper">
-					<img class="content_bio-upper_img" src="images/bio.jpg">
-					<div class="content_bio-upper-text">
-						<span>
-							<h2>Semester/Class</h2>
-							<p>Final Semester<br>Graduate Student</p>
-						</span>
-						<span>
-							<h2>Portfolio</h2>
-							<p><a href="https://laurenkapraun.com/" target="_blank">laurenkapraun.com</a></p>
-						</span>
-						<span>
-							<h2>eMail</h2>
-							<p><a href="mailto:lkkapra@ilstu.edu">lkkapra@ilstu.edu</a></p>
-						</span>
-					</div>
-				</div>
+			<h1>Monolithic vs. Microservice Architecture</h1>
 
-				<div class="content_bio-lower">
-					<h2>Bio</h2>
-					<p>Hi, I'm Lauren Kapraun. I am a Front-End Web Design Graduate Assistant for the College of Arts and Sciences-IT (CAS-IT) at Illinois State University. I live in Normal, Il with my golden retriever, Luna, while working towards my Master's in Information Systems with a focus on Network and Security Management.</p>
+			<h2>Monolithic Architecture</h2>
+			<p>"<strong>The monolithic architecture</strong> is considered to be a traditional way of building applications" (<a href="https://www.n-ix.com/microservices-vs-monolith-which-architecture-best-choice-your-business/" target="_blank">n-ix.com</a>). These applications are built as a single unit and typically include a client-side UI that consists of HTML pages and/or JavaScript running in the browser, server side-application, and a database that consists of many tables that are typically in a relational database management system. The server-side application handles the HTTP requests, executes domain-specific logic, retrieves and updates data from the database, and populates the HTML views to be sent to the browser (<a target="_blank" href="https://www.mulesoft.com/resources/api/microservices-vs-monolithic">mulesoft.com</a>).</p>
 
-		        </div>
-			</section>
-		</div>
 
-		<div class="purpose full_width">
-			<div class="content maxScreenSize">
-				<h2>Purpose</h2>
-				<p>The purpose of this site is to act as a centralized location to show what we have learned in our Advanced Web Application Development (IT 354) class.</p>
+			<div class="two_col two_col-microservices">
+				<span>
+					<h3>Strengths</h3>
+					<p>Monolithic Architecture has many benefits including, less cross-cutting concerns, easier debugging and testing, and easy to employ and develop. Because a Monolithic Architecture is only one application, it is easier to handle cross-cutting concerns such as logging, handling, caching, and performance monitoring. By having a single application, it is easier to debug and test as developers can run end-to-end testing quickly.</p>
+				</span>
 
-				<p>This site will also house written and video "tutorials" going over the main topics from the semester.</p>
+				<span>
+					<h3>Weaknesses</h3>
+					<p>When trying to scale up a Monolithic application, it can become harder to understand. This can also make it harder to make changes, as any code change would affect the entire system, and makes the development process longer. Monolithic applications also cause an issue when it comes to new technology, as the entire application needs to be re-written to become compatible.</p>
+				</span>
+			</div>
+
+			<p>Monolithic Architecture works best when being implemented with a small team, such as a startup. It is also beneficial to use when building a simple application, as they do not typically require scalability or flexibility. Finally, Monolithic Architecture is useful when trying to launch an application quickly.</p>
+
+			<h2>Microservices Architecture</h2>
+			<p>"... A <strong>microservices architecture</strong> breaks it [monolithic application] down into a collection of smaller independent units" (<a href="https://www.n-ix.com/microservices-vs-monolith-which-architecture-best-choice-your-business/" target="_blank">n-ix.com</a>). The units that are created using the microservices architecture are then used to carry out every application process as a separate service. This means that all of the services have their own logic and database, and can be updated, deployed, and scaled independently. These Microservice capabilities are expressed with business-oriented APIs that encapsulate a core business capability.</p>
+
+			<div class="two_col two_col-microservices">
+				<span>
+					<h3>Strengths</h3>
+					<p>Just as Monolithic Architecture, the Microservices Architecture has many strengths, such as independent components, easier understanding, better scalability, flexibility in technology choice, and a higher level of agility. Because each service is created independently, if there is a bug in one microservice, it only impacts that particular service and not the entire application. This is also useful when it comes to choosing the technology that is implemented into the application, as each microservice can use different technologies and frameworks.</p>
+				</span>
+
+				<span>
+					<h3>Weaknesses</h3>
+					<p>As far as weaknesses of Microservice Architecture, they include extra complexity, system distribution, cross-cutting concerns, and testing. Because each application implements independent services, each service has to be deployed independently, causing extra complexity. The cross-cutting concerns associated with Microservices Architecture can include externalized configuration, logging, metrics, and health checks.<p>
+				</span>
+			</div>
+
+			<p>Microservices work well with complex and scalable applications. It is also beneficial to use this architecture when there are Microservices Expertise and enough recourses and people with engineering skills.</p>
+
+			<h2 style="margin-bottom:0;">Article Links</h2>
+			<div class="two_col microservice">
+				<p><a class="btn" target="_blank" href="https://www.n-ix.com/microservices-vs-monolith-which-architecture-best-choice-your-business/">n-ix.com</a></p>
+				<p><a class="btn" target="_blank" href="https://www.mulesoft.com/resources/api/microservices-vs-monolithic">mulesoft.com</a></p>
+				<p><a class="btn" target="_blank" href="https://dev.to/alex_barashkov/microservices-vs-monolith-architecture-4l1m">dev.to</a></p>
+				<p><a class="btn" target="_blank" href="https://dzone.com/articles/microservices-1-introduction-monolithic-vs-microse">dzone.com</a></p>
 			</div>
 		</div>
 
-		<div class="content maxScreenSize designStandards">
-			<h2>Design Standards</h2>
-			<section>
-				<h3>Fonts</h3>
-				<p class="headings">Headings: <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a>
-				<p>Paragraphs, Links, &amp; List Items: <a href="https://fonts.google.com/specimen/Muli" target="_blank">Muli</a></p>
-				<p class="code">Code: <a href="https://fonts.google.com/specimen/Roboto+Mono" target="_blank">Roboto Mono</a></p>
-
-
-			</section>
-
-			<section class="features">
-				<h3>Features</h3>
-				<p><a href="#">Links</a></p>
-				<p><a href="#" class="btn">Button</a></p>
-				<br>
-				<p>The code display uses a JS and CSS file from <a href="https://prismjs.com/" target="_blank">Prism</a>.</p>
-			</section>
-		</div>
-
-		<div class="designColors full_width">
-			<div class="content maxScreenSize">
-				<section class="colors">
-					<h3>Colors</h3>
-					<span class="colors_top">
-						<div class="color color_1"><p>#AD84BF</p></div>
-						<div class="color color_2"><p>#293040</p></div>
-						<div class="color color_3"><p>#8DA67B</p></div>
-					</span>
-					<span class="colors_bottom">
-						<div class="color color_4"><p>#C1D9B0</p></div>
-						<div class="color color_5"><p>#D97E7E</p></div>
-					</span>
-				</section>
-			</div>
-		</div>
-
-		<footer class="footer_home">
+		<footer>
 			<div class="maxScreenSize">
 				<section class="social">
 					<a class="linkedin" href="https://www.linkedin.com/in/laurenkapraun/" target="_blank" rel="noreferrer noopener">
@@ -141,14 +115,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html" class="footer_currentPage">Home</a>
-					<a href="tutorials.html">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html">Tutorials</a>
+					<a href="../articles.html" class="footer_currentPage">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
+
+		<script src="../structure/js/pageTabs.js"></script>
+
 	</body>
 </html>

@@ -3,13 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
+		<script src="../structure/js/header.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -30,100 +32,74 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html" class="currentPage">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html" class="currentPage">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
 		<div class="content maxScreenSize">
-			<h1>Lauren Kapraun</h1>
-			<section>
-				<div class="content_bio-upper">
-					<img class="content_bio-upper_img" src="images/bio.jpg">
-					<div class="content_bio-upper-text">
-						<span>
-							<h2>Semester/Class</h2>
-							<p>Final Semester<br>Graduate Student</p>
-						</span>
-						<span>
-							<h2>Portfolio</h2>
-							<p><a href="https://laurenkapraun.com/" target="_blank">laurenkapraun.com</a></p>
-						</span>
-						<span>
-							<h2>eMail</h2>
-							<p><a href="mailto:lkkapra@ilstu.edu">lkkapra@ilstu.edu</a></p>
-						</span>
-					</div>
-				</div>
+			<h1>Objects Continued</h1>
 
-				<div class="content_bio-lower">
-					<h2>Bio</h2>
-					<p>Hi, I'm Lauren Kapraun. I am a Front-End Web Design Graduate Assistant for the College of Arts and Sciences-IT (CAS-IT) at Illinois State University. I live in Normal, Il with my golden retriever, Luna, while working towards my Master's in Information Systems with a focus on Network and Security Management.</p>
+			<div class="tab">
+			  <button class="tablinks" onclick="openTab(event, 'prototypalInheritance')" id="defaultOpen">Prototypal Inheritance</button>
+			  <button class="tablinks" onclick="openTab(event, 'this')">`this`</button>
+			</div>
 
-		        </div>
-			</section>
-		</div>
+			<div id="prototypalInheritance" class="tabcontent">
+				<h2>Prototypal Inheritance</h2>
 
-		<div class="purpose full_width">
-			<div class="content maxScreenSize">
-				<h2>Purpose</h2>
-				<p>The purpose of this site is to act as a centralized location to show what we have learned in our Advanced Web Application Development (IT 354) class.</p>
+				<h3>Function</h3>
+				<pre class="line-numbers">
+					<code class="language-javascript">function aboutMe(firstName, title) {
+						this.firstName = firstName;
+						this.title = title;
+					}
 
-				<p>This site will also house written and video "tutorials" going over the main topics from the semester.</p>
+					const me = new aboutMe('Lauren', 'Graduate Student')
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ${me.firstName}, and I am a ${me.title}.`)</code>
+				</pre>
+
+				<h3>Class</h3>
+				<pre class="line-numbers">
+					<code class="language-javascript">class aboutMe {
+						constructor(firstName, title) {
+							this.firstName = firstName;
+							this.title = title;
+						}
+					}
+
+					const meClass = new aboutMe('Lauren', 'Graduate Student')
+
+					//Prints: My name is Lauren, and I am a Graduate Student.
+					console.log(`My name is ` + meClass.firstName + `, and I am a ` + meClass.title + `.`)</code>
+				</pre>
+			</div>
+
+			<div id="this" class="tabcontent">
+				<h2>`this`</h2>
+
+				<pre class="line-numbers">
+					<code class="language-javascript"></code>
+				</pre>
 			</div>
 		</div>
 
-		<div class="content maxScreenSize designStandards">
-			<h2>Design Standards</h2>
-			<section>
-				<h3>Fonts</h3>
-				<p class="headings">Headings: <a href="https://fonts.google.com/specimen/Ovo" target="_blank">Ovo</a>
-				<p>Paragraphs, Links, &amp; List Items: <a href="https://fonts.google.com/specimen/Muli" target="_blank">Muli</a></p>
-				<p class="code">Code: <a href="https://fonts.google.com/specimen/Roboto+Mono" target="_blank">Roboto Mono</a></p>
-
-
-			</section>
-
-			<section class="features">
-				<h3>Features</h3>
-				<p><a href="#">Links</a></p>
-				<p><a href="#" class="btn">Button</a></p>
-				<br>
-				<p>The code display uses a JS and CSS file from <a href="https://prismjs.com/" target="_blank">Prism</a>.</p>
-			</section>
-		</div>
-
-		<div class="designColors full_width">
-			<div class="content maxScreenSize">
-				<section class="colors">
-					<h3>Colors</h3>
-					<span class="colors_top">
-						<div class="color color_1"><p>#AD84BF</p></div>
-						<div class="color color_2"><p>#293040</p></div>
-						<div class="color color_3"><p>#8DA67B</p></div>
-					</span>
-					<span class="colors_bottom">
-						<div class="color color_4"><p>#C1D9B0</p></div>
-						<div class="color color_5"><p>#D97E7E</p></div>
-					</span>
-				</section>
-			</div>
-		</div>
-
-		<footer class="footer_home">
+		<footer>
 			<div class="maxScreenSize">
 				<section class="social">
 					<a class="linkedin" href="https://www.linkedin.com/in/laurenkapraun/" target="_blank" rel="noreferrer noopener">
@@ -141,14 +117,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html" class="footer_currentPage">Home</a>
-					<a href="tutorials.html">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
+					<a href="../articles.html">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
+
+		<script src="../structure/js/pageTabs.js"></script>
+
 	</body>
 </html>

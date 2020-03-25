@@ -60,41 +60,115 @@
 
 			<div id="prototypalInheritance" class="tabcontent">
 				<h2>Prototypal Inheritance</h2>
+				<p>In JavaScript, all objects inherit properties and methods from a prototype. For example, <span class="code">Date</span> objects inherit from the <span class="code">Date.prototype</span> prototype, the <span class="code">Array</span> objects inherit from the <span class="code">Array.prototype</span>, and the <span class="code">Person</span> objects inherit from the <span class="code">Person.prototype</span> prototype. These three objects inherit their prototypes from the <span class="code">Object.prototype</span>.</p>
 
-				<h3>Function</h3>
+				<p>The <span class="code">prototype</span> property allows users to add new properties and methods to object constructors.
 				<pre class="line-numbers">
-					<code class="language-javascript">function aboutMe(firstName, title) {
-						this.firstName = firstName;
-						this.title = title;
+					<code class="language-javascript">//Adding a New Property
+					function AboutMe(firstName) {
+					  this.firstName = firstName;
 					}
 
-					const me = new aboutMe('Lauren', 'Graduate Student')
+					AboutMe.prototype.lastName = "Kapraun";
+					var lauren = new AboutMe ("Lauren")
 
-					//Prints: My name is Lauren, and I am a Graduate Student.
-					console.log(`My name is ${me.firstName}, and I am a ${me.title}.`)</code>
-				</pre>
+					//Prints: My name is Lauren Kapraun
+					console.log(`My name is ${lauren.firstName} ` + lauren.lastName + `.`)
 
-				<h3>Class</h3>
-				<pre class="line-numbers">
-					<code class="language-javascript">class aboutMe {
-						constructor(firstName, title) {
-							this.firstName = firstName;
-							this.title = title;
+					//Adding a New Method
+					AboutMe.prototype.name = function() {
+						return this.firstName + " " + this.lastName
+					};
+
+					//Prints: My name is Lauren Kapraun
+					console.log(`My name is ` + lauren.name() + `.`);
+
+					//Using Classes
+					class MyPet {
+						constructor(name) {
+							this.name = name;
+						}
+
+						breed() {
+							console.log(this.name + ' is a Golden Retriever.');
 						}
 					}
 
-					const meClass = new aboutMe('Lauren', 'Graduate Student')
+					var luna = new MyPet("Luna")
 
-					//Prints: My name is Lauren, and I am a Graduate Student.
-					console.log(`My name is ` + meClass.firstName + `, and I am a ` + meClass.title + `.`)</code>
+					//Prints: Luna is a Golden Retriever
+					luna.breed();</code>
 				</pre>
 			</div>
 
 			<div id="this" class="tabcontent">
 				<h2>`this`</h2>
+				<p style="font-size:.8em" class="code"><em>The following information can be found at <a href="https://www.w3schools.com/js/js_this.asp" target="_blank">w3schools</a>.</em></p>
 
+				<p>The JavaScript <span class="code">this</span> keyword refers to the object it belongs to. The following list goes over the different values assigned depending on how it is used.</p>
+				<ul>
+					<li>In a method, <span class="code">this</span> refers to the owner object.</li>
+					<li>Alone, <span class="code">this</span> refers to the global object.</li>
+					<li>In a function, <span class="code">this</span> refers to the global object.</li>
+					<li>In a function, in strict mode, <span class="code">this</span> is <span class="code">undefined</span>.</li>
+					<li>In an event, <span class="code">this</span> refers to the element that received the event.</li>
+					<li>Methods like <span class="code">call()</span>, and <span class="code">apply()</span> can refer <span class="code">this</span> to any object.</li>
+				</ul>
+
+				<h3><span class="code">this</span> in a Method</h3>
 				<pre class="line-numbers">
-					<code class="language-javascript"></code>
+					<code class="language-javascript">var myPet = {
+						  fName: "Luna",
+						  mName : "Louise",
+						  lName : "Kapraun",
+						  fullName : function() {
+						    //this represents the myPet Object
+						    return this.fName + " " + this.mName + " " + this.lName;
+						  }
+						};
+
+						//Prints Luna Louise Kapraun
+						console.log(myPet.fullName());</code>
+				</pre>
+
+				<h3><span class="code">this</span> Alone</h3>
+				<pre class="line-numbers">
+					<code class="language-html">&lt;div id="it354">&lt;/div>
+
+					&lt;script>
+					//this refers to the Window Object
+					//you can also use strict mode to refer to the Window Object
+					var alone = this;
+
+					//Displays [object Window]
+					document.getElementById("it354").innerHTML = alone;
+					&lt;/script></code>
+				</pre>
+
+				<h3><span class="code">this</span> in a Function</h3>
+				<pre class="line-numbers">
+					<code class="language-html">&lt;div id="it354">&lt;/div>
+
+					&lt;script>
+					//this is in a function is the default binding for this
+
+					//Displays [object Window]
+					document.getElementById("it354").innerHTML = thisFunction();
+
+					function thisFunction() {
+						return this;
+					}
+
+					//However, if you use strict, the result is undefined
+					"use strict";
+
+					//Displays undefined
+					document.getElementById("it354").innerHTML = thisStrictFunction();
+
+					function thisStrictFunction() {
+						 return this;
+					}
+					&lt;/script></code>
 				</pre>
 			</div>
 		</div>

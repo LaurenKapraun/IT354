@@ -103,9 +103,72 @@
 
 			<div id="this" class="tabcontent">
 				<h2>`this`</h2>
+				<p style="font-size:.8em" class="code"><em>The following information can be found at <a href="https://www.w3schools.com/js/js_this.asp" target="_blank">w3schools</a>.</em></p>
 
+				<p>The JavaScript <span class="code">this</span> keyword refers to the object it belongs to. The following list goes over the different values assigned depending on how it is used.</p>
+				<ul>
+					<li>In a method, <span class="code">this</span> refers to the owner object.</li>
+					<li>Alone, <span class="code">this</span> refers to the global object.</li>
+					<li>In a function, <span class="code">this</span> refers to the global object.</li>
+					<li>In a function, in strict mode, <span class="code">this</span> is <span class="code">undefined</span>.</li>
+					<li>In an event, <span class="code">this</span> refers to the element that received the event.</li>
+					<li>Methods like <span class="code">call()</span>, and <span class="code">apply()</span> can refer <span class="code">this</span> to any object.</li>
+				</ul>
+
+				<h3><span class="code">this</span> in a Method</h3>
 				<pre class="line-numbers">
-					<code class="language-javascript"></code>
+					<code class="language-javascript">var myPet = {
+						  fName: "Luna",
+						  mName : "Louise",
+						  lName : "Kapraun",
+						  fullName : function() {
+						    //this represents the myPet Object
+						    return this.fName + " " + this.mName + " " + this.lName;
+						  }
+						};
+
+						//Prints Luna Louise Kapraun
+						console.log(myPet.fullName());</code>
+				</pre>
+
+				<h3><span class="code">this</span> Alone</h3>
+				<pre class="line-numbers">
+					<code class="language-html">&lt;div id="it354">&lt;/div>
+
+					&lt;script>
+					//this refers to the Window Object
+					//you can also use strict mode to refer to the Window Object
+					var alone = this;
+
+					//Displays [object Window]
+					document.getElementById("it354").innerHTML = alone;
+					&lt;/script></code>
+				</pre>
+
+				<h3><span class="code">this</span> in a Function</h3>
+				<pre class="line-numbers">
+					<code class="language-html">&lt;div id="it354">&lt;/div>
+
+					&lt;script>
+					//this is in a function is the default binding for this
+
+					//Displays [object Window]
+					document.getElementById("it354").innerHTML = thisFunction();
+
+					function thisFunction() {
+						return this;
+					}
+
+					//However, if you use strict, the result is undefined
+					"use strict";
+
+					//Displays undefined
+					document.getElementById("it354").innerHTML = thisStrictFunction();
+
+					function thisStrictFunction() {
+						 return this;
+					}
+					&lt;/script></code>
 				</pre>
 			</div>
 		</div>

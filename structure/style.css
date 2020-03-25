@@ -80,7 +80,7 @@ a:hover, .headings a:hover{
 	background-color: fff;
 	color: #293040;
 	padding: 1em;
-	border: 1px solid #4D7A8C;
+	border: 1px solid #293040;
 	margin: 1em 0;
 }
 
@@ -352,7 +352,7 @@ footer a{
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  border: 1px solid #4D7A8C;
+  border: 1px solid #293040;
   border-bottom: none;
 }
 
@@ -368,7 +368,7 @@ footer a{
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #4D7A8C;
+  border: 1px solid #293040;
   border-top: none;
 }
 

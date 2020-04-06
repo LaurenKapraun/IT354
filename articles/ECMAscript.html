@@ -12,6 +12,7 @@
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -93,7 +94,7 @@
 						Array.isArray(); //returns false
 						Array.isArray(null); //returns false</code>
 					</pre>
-				
+
 			</div>
 
 			<p>Starting in 2015, ECMA International started naming ECMAScript by year instead of by version. This lead to the next major version release, ECMAScript 2015 (ES6). This version added let and const., default parameter values, Array.find(), and Array.findIndex(). All of the major browsers are compatible with ES6, just as ES5, except for Internet Explorer ("ECMAScript 2015"). </p>
@@ -174,7 +175,7 @@
 
 						//returns "calling"
 						//AFTER 2 seconds, it returns "resolved"
-						asyncCall(); 
+						asyncCall();
 
 						//****** rest/spread properties ******//
 						//Rest
@@ -191,7 +192,7 @@
 						//Syntax
 						//onFinally is a function when the Promise is settled
 						p.finally(onFinally)
-						
+
 						//OR
 						p.finally(function() {
 							//settled (fulfilled or rejected)
@@ -206,7 +207,7 @@
 				<pre class="line-numbers">
 						<code class="language-javascript">//****** Array.Flat()/Array.flatMap() ******//
 						var flatArrayEx = [[1,2],3,4];
-							
+
 						console.log(flatArrayEx); //returns [[1, 2], 3, 4]
 						console.log(flatArrayEx.flat()); //returns [1, 2, 3, 4]
 
@@ -241,7 +242,7 @@
 						}
 
 						console.log(showThisFunction.toString());
-						/* returns: 
+						/* returns:
 
 						"function showThisFunction(text) {
   							var example = text;

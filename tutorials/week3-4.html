@@ -12,6 +12,7 @@
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -169,15 +170,15 @@
 					noRest(1,2,3,4,5,6,7,8,9,10); //returns 2
 
 					//****** Rest Parameter ******//
-					function restFunction(...input) { 
-					    let multiply = 1; 
-					    for (let i of input) { 
-					        multiply*=i; 
-					    } 
-					    return multiply; 
+					function restFunction(...input) {
+					    let multiply = 1;
+					    for (let i of input) {
+					        multiply*=i;
+					    }
+					    return multiply;
 					}
 
-					restFunction(1,2); //returns 2 
+					restFunction(1,2); //returns 2
 					restFunction(1,2,3,4,5); //returns 120</code>
 			  </pre>
 			</div>
@@ -194,7 +195,7 @@
 
 					function displayName() {
 						//The variable myName is accessible within this function
-						console.log(myName); 
+						console.log(myName);
 					}
 
 					displayName(); //still returns Lauren

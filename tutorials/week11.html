@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
-		<link rel="stylesheet" href="structure/prism.css" type="text/css" media="all">
-		<script src="structure/js/prism.js"></script>
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
-		<script src="structure/js/footer.js"></script>
+		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -33,32 +33,241 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html">Home</a>
-		            	<a href="#" class="currentPage">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html">Home</a>
-		            	<a href="#" class="currentPage">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
-		<div class="content two_col maxScreenSize">
-			<h1>Tutorials</h1>
-			<p><a href="tutorials/week1.html" class="btn">1. Values &amp; Types, Unary Operators, &amp; Hoisting</a></p>
-        	<p><a href="tutorials/week3-4.html" class="btn">2. Functions, Optional Arguments, Rest Parameters, &amp; Scope</a></p>
-        	<p><a href="tutorials/week5.html" class="btn">3. Objects</a></p>
-					<p><a href="tutorials/week7.html" class="btn">4. Objects: `this` & Prototypal Inheritance</a></p>
-					<p><a href="tutorials/modules.html" class="btn">5.1. Modules</a></p>
-					<p><a href="tutorials/week11.html" class="btn">5.2. Higher Order Functions &amp; Advanced Array Methods</a></p>
+		<div class="content maxScreenSize">
+			<h1>Higher Order Functions &amp; Advanced Array Methods</h1>
+
+			<div class="tab">
+			  <button class="tablinks" onclick="openTab(event, 'higherOrderFunctions')" id="defaultOpen">Higher Order Functions</button>
+				<button class="tablinks" onclick="openTab(event, 'advancedArrayMethods')">Advanced Array Methods</button>
+			</div>
+
+			<div id="higherOrderFunctions" class="tabcontent">
+				<h2>Higher Order Functions</h2>
+				<p>Higher Order Functions are functions that operate on other functions by taking them as arguments or by retruning them. These functions allow developers to abstract over actions and values. </p>
+
+				<h3>Function that Creates a New Function</h3>
+				<pre class="line-numbers">
+					<code class="language-javascript">function lessThan(a) {
+						return b => b < a
+					}
+
+					let lessThan5 = lessThan(5);
+
+					//Prints: false
+					console.log(lessThan5(15));</code></pre>
+
+				<h3>Function that Changes Another Function</h3>
+				<pre class="line-numbers">
+					<code class="language-javascript">function studentPassFail(f) {
+				  return(...grades) => {
+				    console.log("grades", grades);
+
+				    let result = f(...grades);
+				    console.log("grades", grades,  ", higest grade: ", result);
+				  };
+				}
+
+				//Prints: grades [ 95, 80, 99 ]
+				//Prints: grades [ 95, 80, 99 ] , higest grade:  99
+				studentPassFail(Math.max)(95, 80, 99);</code></pre>
+
+				<h3>Summarizing with reduce</h3>
+				<p>By using reduce, you can take an array and return a single value. Below I have given an example of how to reduce an array by multiplying the values together.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">function reduce(array, combine, start) {
+				  let current = start;
+				  for (let element of array) {
+				    current = combine(current, element);
+				  }
+				  return current;
+				}
+
+				//Both Print: 750
+				console.log(reduce([5,10,15], (a, b) => a * b, 1));
+				console.log([5,10,15].reduce((a, b) => a * b, 1));</code></pre>
+			</div>
+
+			<div id="advancedArrayMethods" class="tabcontent">
+				<h2>Advanced Array Methods</h2>
+				<h3>find</h3>
+				<p><span class="code">find</span> is used to find specific elements within a given array. It returns the first item that passes the test.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					//Prints: 20
+					myArray.find(myNum => myNum === 20);</code></pre>
+
+				<h3>findIndex</h3>
+				<p>The <span class="code">findIndex</span> method returns the index of the first element that passes the test.  If no element passes the test, it returns a <span class="code">-1</span>.
+
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					//Prints: 3
+					myArray.find(myNum => myNum === 20);
+
+					//Prints: -1
+					myArray.findIndex(myNum => myNum === 40);</code></pre>
+
+				<h3>forEach</h3>
+				<p>This method executes a function once for each element in an array.</p>
+
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+				/* Prints:
+							5
+							10
+							15
+							20
+				*/
+				myArray.forEach(element => console.log(element))</code></pre>
+
+				<h3>map</h3>
+				<p>This method takes a function to run on every item in a given array. It then returns a modified copy of the given array.</p>
+
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					function multiplyByFive(value) {
+					  return value * 5;
+					}
+
+					function map(array, f) {
+					  let newArray = [];
+
+					  for(let i = 0; i < array.length; i++) {
+					    let oldArrayItem = array[i];
+					    let newArrayItem = f(oldArrayItem);
+					    newArray[i] = newArrayItem;
+					  }
+					  return newArray
+					}
+
+					//Prints: [ 5, 10, 15, 20 ]
+					console.log(myArray)
+
+					//Prints: [ 25, 50, 75, 100 ]
+					myArray.map(multiplyByFive);</code></pre>
+
+				<h3>flat</h3>
+				<p>The <span class="code">flat</span> method creates a new array with all of the sub-array elements concatenated into it.</p>
+
+				<pre class="line-numbers">
+					<code class="language-html">&lt;div id="it354">&lt;/div>
+
+					&lt;script>
+					var myArray = [5, 10, [15, 20]];
+
+					//Displays: 5,10,15,20
+					document.getElementById("it354").innerHTML = myArray.flat()
+					&lt;/script></code></pre>
+
+				<h3>flatMap</h3>
+				<p><span class="code">flatMap</span> is a method that maps each element using a mapping function, and then flattens the result into a new array.</p>
+
+				<pre class="line-numbers">
+					<code class="language-html">&lt;div id="it354">&lt;/div>
+
+					&lt;script>
+					var myArray = [5, 10, 15, 20];
+
+					//Displays: 25,50,75,100
+					document.getElementById("it354").innerHTML = myArray.flatMap(x => [x*5]);
+					&lt;/script></code></pre>
+
+				<h3>filter</h3>
+				<p>This method creates a new array with all of the elements that pass the test given by the provided function.</p>
+
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					var filteredArray = myArray.filter(myNum => myNum > 14);
+
+					//Prints: [ 15, 20 ]
+					console.log(filteredArray);</code></pre>
+
+				<h3>sort</h3>
+				<p>This method sorts all of the elements of an array in place and then returns the sorted array. By default, the array is sorted in ascending order.</p>
+
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					//Prints: [ 10, 15, 20, 5 ]
+					console.log(myArray.sort());</code></pre>
+
+				<h3>push</h3>
+				<p>The <span class="code">push</span> method adds one or more elements to the end of a given array.</p>
+
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					var newItem = myArray.push(25);
+
+					//Prints: 5
+					console.log(newItem)
+
+					//Prints: [ 5, 10, 15, 20, 25 ]
+					console.log(myArray)</code></pre>
+
+				<h3>unshift</h3>
+				<p>This method adds one or more elements to the beginning of an array.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					var newItem = myArray.unshift(25);
+
+					//Prints: 5
+					console.log(newItem)
+
+					//Prints: [ 25, 5, 10, 15, 20 ]
+					console.log(myArray)</code></pre>
+
+				<h3>shift</h3>
+				<p>This method removes the first element from a given array and then returns the element it removed.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+					var removeItem = myArray.shift();
+
+					//Prints: 5
+					console.log(removeItem)
+
+					//Prints: [ 10, 15, 20 ]
+					console.log(myArray)</code></pre>
+
+					<h3>pop</h3>
+					<p>The <span class="code">pop</span> method removes the last element from a given array and then returns the element it removed.</p>
+					<pre class="line-numbers">
+						<code class="language-javascript">var myArray = [5, 10, 15, 20];
+
+						var removeItem = myArray.pop();
+
+						//Prints: 20
+						console.log(removeItem)
+
+						//Prints: [ 5, 10, 15 ]
+						console.log(myArray)</code></pre>
+			</div>
+
 		</div>
 
 		<footer>
@@ -79,18 +288,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html">Home</a>
-					<a href="tutorials.html" class="footer_currentPage">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
+					<a href="../articles.html">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
 
-		<script src="structure/js/pageTabs.js"></script>
-
+		<script src="../structure/js/pageTabs.js"></script>
 
 	</body>
 </html>

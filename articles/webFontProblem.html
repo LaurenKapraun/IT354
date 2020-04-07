@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
-		<link rel="stylesheet" href="structure/prism.css" type="text/css" media="all">
-		<script src="structure/js/prism.js"></script>
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
-		<script src="structure/js/footer.js"></script>
+		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -33,33 +33,47 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="#" class="currentPage">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="#" class="currentPage">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
-		<div class="content two_col maxScreenSize">
-			<h1>Articles</h1>
-        	<p><a href="articles/ECMAscript.html" class="btn">1. ECMAscript</a></p>
-        	<p><a href="articles/responsiveUsability.html" class="btn">2. Responsive Web Design &amp; Usability</a></p>
-					<p><a href="articles/microservices.html" class="btn">3. Monolithic vs. Microservice Architecture</a></p>
-					<p><a href="articles/webFontProblem.html" class="btn">4. The Mitt Romney Web Font Problem</a></p>
+		<div class="content maxScreenSize">
+			<h1>The Mitt Romney Web Font Problem</h1>
+			<p>The problem presented in this article is that when developers pull in external fonts, the browser automatically hides the text until the web fonts have loaded, which is termed "The Flash of Invisible Text" or FOIT. More specifically, the article in which they are referencing used two variations of a font within one block of text. This caused an important part of their title to load slower than the rest of the content.</p>
+
+			<p>From a user standpoint, this can be an issue in a couple of different ways. The first issue is that if the web fonts are causing the web page to load slower, users are more apt to click away from your site and find another solution. Another issue that arises is that most users skim the content on web pages. If the content isn't displaying properly or not displaying at all, the user may not be able to find what they are looking for quickly and could potentially leave the site.</p>
+
+			<p>In the article Zach mentions that to fix this problem, developers can follow the following steps:</p>
+
+			<blockquote cite="https://www.zachleat.com/web/mitt-romney-webfont-problem/">
+					<ol>
+						<li>You can use the font loading solution I’ve been prescribing and documented over at Dev.Opera. This is by far the easiest method and will eliminate FOIT by switching to unstyled fallback text while the font is loading.</li>
+						<li>If you aren’t comfortable with eliminating FOIT, you can also group your font loads into a single repaint, shown in the Appendix 1 code sample below.</li>
+						<li>You can also use the previously documented Flash of Faux Text approach, utilizing font-synthesis to show browser generated bold and italic fallbacks while the real web fonts load.</li>
+				</ol>
+				<footer>
+        —Zach Leatherman, <cite><a href="https://www.zachleat.com/web/mitt-romney-webfont-problem/" target="_blank">The Mitt Romney Web Font Problem</a></cite></footer>
+			</blockquote>
+
+			<p><a class="btn" style="display:block;" target="_blank" href="https://www.zachleat.com/web/mitt-romney-webfont-problem/">Full Article</a></p>
+
 		</div>
 
-		<footer>
+		<footer style="position: inherit !important;">
 			<div class="maxScreenSize">
 				<section class="social">
 					<a class="linkedin" href="https://www.linkedin.com/in/laurenkapraun/" target="_blank" rel="noreferrer noopener">
@@ -77,17 +91,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html">Home</a>
-					<a href="tutorials.html">Tutorials</a>
-					<a href="articles.html" class="footer_currentPage">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html">Tutorials</a>
+					<a href="../articles.html" class="footer_currentPage">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
 
-		<script src="structure/js/pageTabs.js"></script>
+		<script src="../structure/js/pageTabs.js"></script>
 
 	</body>
 </html>

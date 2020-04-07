@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
-		<link rel="stylesheet" href="structure/prism.css" type="text/css" media="all">
-		<script src="structure/js/prism.js"></script>
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
-		<script src="structure/js/footer.js"></script>
+		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -33,33 +33,120 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html">Home</a>
-		            	<a href="#" class="currentPage">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html">Home</a>
-		            	<a href="#" class="currentPage">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
-		<div class="content two_col maxScreenSize">
-			<h1>Tutorials</h1>
-			<p><a href="tutorials/week1.html" class="btn">1. Values &amp; Types, Unary Operators, &amp; Hoisting</a></p>
-        	<p><a href="tutorials/week3-4.html" class="btn">2. Functions, Optional Arguments, Rest Parameters, &amp; Scope</a></p>
-        	<p><a href="tutorials/week5.html" class="btn">3. Objects</a></p>
-					<p><a href="tutorials/week7.html" class="btn">4. Objects: `this` & Prototypal Inheritance</a></p>
-					<p><a href="tutorials/modules.html" class="btn">5.1. Modules</a></p>
-					<p><a href="tutorials/week11.html" class="btn">5.2. Higher Order Functions &amp; Advanced Array Methods</a></p>
-		</div>
+		<div class="content maxScreenSize">
+			<h1>Modules</h1>
+			<p>Modules are clusters of code that help with maintaining, namespacing, and reusability of JavaScript code. They are used to lessen dependencies, allowing it to grow and improve independently. Since global variables should not be shared between unrelated code, modules allow developers to avoid namespace pollution by creating a space for private variables. Finally, modules help with the allowance of reusing code across projects.</p>
+
+			<h2>Module pattern</h2>
+			<p>Module Patterns are used to mimic the concept of classes that are used in languages such as Java. This allows developers to store both public and private methods and variables inside a single object. It also enables the creation of public-facing APIs for methods, while still encapsulating private variables and methods.</p>
+			<div class="tab">
+			  <button class="tablinks" onclick="openTab(event, 'ac')" id="defaultOpen">Anonymous Closure</button>
+				<button class="tablinks" onclick="openTab(event, 'oi')">Object Interface</button>
+				<button class="tablinks" onclick="openTab(event, 'rmp')">Revealing Module Pattern</button>
+			</div>
+
+			<div id="ac" class="tabcontent">
+				<h3>Anonymous Closure</h3>
+				<p>An anonymous function has its own evaluation "closure" and then immediately evaluates it. By using an anonymous function, developers can use local variables within the function without overwriting global variables. These functions also have access to global variables, as shown in the example below.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var global = [100, 90, 80];
+
+					(function () {
+					  var studentGrades = [90, 80, 70];
+
+						//Find if student passed or failed class
+					  var studentPassFail = function(){
+					    var total = studentGrades.reduce(function(accumulator, item) {
+					      return accumulator + item}, 0);
+
+					      if(total > 70 ){
+					        return 'Student has passed with a average of: ' + total / studentGrades.length + '%';
+					      } else {
+					        return 'Student has failed with a average of: ' + total / studentGrades.length + '%';
+					      }
+					  }
+
+						//Prints: Student has passed with a average of: 80%
+					  console.log(studentPassFail());
+
+						//Prints: [ 100, 90, 80 ]
+						console.log(global);
+				}());</code></pre>
+			</div>
+
+			<div id="oi" class="tabcontent">
+				<h3>Object Interface</h3>
+				<p>By using the object interface, developers can decide which variables and methods to keep private, and which ones they want to expose by placing them in return statements. Below, you can see that the variable <span class="code">studentGrades</span> is kept private, along with the <span class="code">didPassFail</span> method. The return statements are then displayed by running the command: <span class="code">studentPassFail.didPassFail();</span> outside of the <span class="code">studentPassFail</span> method.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var studentPassFail = (function () {
+					  //Private Variable
+					  var studentGrades = [90, 80, 70];
+
+					  //Implement a module within a function() block
+					  return {
+					    didPassFail: function() {
+					      var total = studentGrades.reduce(function(accumulator, item) {
+					      return accumulator + item}, 0);
+
+					      if(total > 70 ){
+					        return 'Student has passed with a average of: ' + total / studentGrades.length + '%';
+					      } else {
+					        return 'Student has failed with a average of: ' + total / studentGrades.length + '%';
+					      }
+					    }
+					  }
+					}) ();
+
+					//Prints: Student has passed with a average of: 80%
+					studentPassFail.didPassFail();</code></pre>
+			</div>
+
+			<div id="rmp" class="tabcontent">
+				<h3>Revealing Module Pattern</h3>
+				<p>The revealing module pattern approach is very similar to the object interface approach. However, when using the revealing module pattern approach, all methods and variables are kept private until explicitly exposed, as shown below.</p>
+				<pre class="line-numbers">
+					<code class="language-javascript">var studentPassFail = (function () {
+					  //Private Variable
+					  var studentGrades = [90, 80, 70];
+
+					  var didPassFail = function() {
+					     var total = studentGrades.reduce(function(accumulator, item) {
+					      return accumulator + item}, 0);
+
+					      if(total > 70 ){
+					        return 'Student has passed with a average of: ' + total / studentGrades.length + '%';
+					      } else {
+					        return 'Student has failed with a average of: ' + total / studentGrades.length + '%';
+					      }
+					    }
+
+					  //Reveal public pointers to the private functions
+					  return {
+					     didPassFail: didPassFail
+					  }
+					}) ();
+
+					studentPassFail.didPassFail();</code></pre>
+			</div>
+	</div>
 
 		<footer>
 			<div class="maxScreenSize">
@@ -79,18 +166,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html">Home</a>
-					<a href="tutorials.html" class="footer_currentPage">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
+					<a href="../articles.html">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
 
-		<script src="structure/js/pageTabs.js"></script>
-
+		<script src="../structure/js/pageTabs.js"></script>
 
 	</body>
 </html>

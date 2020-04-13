@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
-		<link rel="stylesheet" href="structure/prism.css" type="text/css" media="all">
-		<script src="structure/js/prism.js"></script>
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
-		<script src="structure/js/footer.js"></script>
+		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -33,33 +33,75 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html">Home</a>
-		            	<a href="#" class="currentPage">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html">Home</a>
-		            	<a href="#" class="currentPage">Tutorials</a>
-		            	<a href="articles.html">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html" class="currentPage">Tutorials</a>
+		            	<a href="../articles.html">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
-		<div class="content two_col maxScreenSize">
-			<h1>Tutorials</h1>
-			<p><a href="tutorials/week1.html" class="btn">1. Values &amp; Types, Unary Operators, &amp; Hoisting</a></p>
-        	<p><a href="tutorials/week3-4.html" class="btn">2. Functions, Optional Arguments, Rest Parameters, &amp; Scope</a></p>
-        	<p><a href="tutorials/week5.html" class="btn">3. Objects</a></p>
-					<p><a href="tutorials/week7.html" class="btn">4. Objects: `this` & Prototypal Inheritance</a></p>
-					<p><a href="tutorials/modules.html" class="btn">5.1. Modules</a></p>
-					<p><a href="tutorials/week11.html" class="btn">5.2. Higher Order Functions &amp; Advanced Array Methods</a></p>
-					<p><a href="tutorials/week12.html" class="btn">6. APIs</a></p>
+		<div class="content maxScreenSize">
+			<h1>APIs</h1>
+			<h2>What are APIs?</h2>
+			<p>API is an acronym for Application Programming Interface. APIs are part of a server that takes in requests and sends responses, that allow users to perform actions without leaving the site they are on. In simple terms, APIs are used to list operations and descriptions that developers can use when creating their apps. APIs are typically returned in a JSON or XML format. It is important to note that an API is not a database, but rather it is the code that dictates the access points to the server.</p>
+
+			<h2>What is REST?</h2>
+			<p>REST stands for <span class="code">RE</span>presentation <span class="code">S</span>tate <span class="code">T</span>ransfer, and is a design pattern for APIs. A RESTful API must follow the following six constraints:</p>
+
+			<div class="two_col api">
+				<span>
+					<h3>1. Uniform interface</h3>
+					<p>The uniform interface has to include a resource identifier within its request to the server, along with an ample amount of information in the response. In a broader sense, the uniform interface ensures that the response from the request from different clients looks the same.</p>
+				</span>
+
+				<span>
+					<h3>2. Client-Server Separation</h3>
+					<p>Because the client and server act independently, the only interaction between them is in the form of requests. The requests can only be initiated by the client and the responses are then sent by the server.</p>
+				</span>
+
+				<span>
+					<h3>3. Stateless</h3>
+					<p>Having a stateless constraint means that the server doesn't remember anything about the use of the API. This means that it doesn't track if a user has sent a GET request or even what resources the user requested.</p>
+				</span>
+
+				<span>
+					<h3>4. Layered System</h3>
+					<p>Between the client requests and server responses, there can be many servers, or layers, in-between. These layers are typically used for security, caching, load-balancing, etc. However, these layers do not affect the request/response and the user is unable to see how many layers their request goes through.</p>
+				</span>
+
+				<span>
+					<h3>5. Cacheable</h3>
+					<p>TThis constraint is used to force the server to send whether or not the data in the response is cacheable. Typically if the data is, in fact, cacheable, it will contain a version number, which can be used to keep the client from requesting the same data multiple times. This will also let the client know if the data is out-of-date and needs to send another request to the server.</p>
+				</span>
+
+				<span>
+					<h3>6. Code-on-Demand</h3>
+					<p>The final constraint, code-on-demand, is an option constraint for RESTful APIs. This constraint essentially states that if a client requests code from the server, then the server should contain code. This code is typically a script when the response is in HTML.</p>
+				</span>
+
+			</div>
+
+			<h2>What is Postman?</h2>
+
+			<h2>Examples</h2>
+			<p><a href="https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/">GitHub example</a></p>
+			<p><a href="https://medium.com/@perrysetgo/what-exactly-is-an-api-69f36968a41f">Twitter example?</a></p>
+			<pre class="line-numbers">
+					<code class="language-javascript"></code></pre>
+
+
+
 		</div>
 
 		<footer>
@@ -80,18 +122,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html">Home</a>
-					<a href="tutorials.html" class="footer_currentPage">Tutorials</a>
-					<a href="articles.html">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html" class="footer_currentPage">Tutorials</a>
+					<a href="../articles.html">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
 
-		<script src="structure/js/pageTabs.js"></script>
-
+		<script src="../structure/js/pageTabs.js"></script>
 
 	</body>
 </html>

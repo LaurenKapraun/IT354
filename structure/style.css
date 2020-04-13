@@ -99,6 +99,14 @@ a:hover, .headings a:hover, blockquote footer a:hover{
   margin: 0;
 }
 
+.two_col.api {
+  grid-column-gap: 2em;
+}
+
+.api h3 {
+  margin-bottom: 0;
+}
+
 .microservice p {
   margin: .5em 0;
 }

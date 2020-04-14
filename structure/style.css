@@ -150,6 +150,12 @@ blockquote footer {
   font-family: 'Muli', sans-serif;
   color: #293040;
 }
+.tutorial_img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+}
 
 /* NAVIGATION */
 header{
@@ -650,6 +656,12 @@ code[class*="language-"], pre[class*="language-"] {
 	.purpose .content{
 		padding: 1em;
 	}
+
+  .tutorial_img {
+    width: 80%;
+    margin: unset;
+    padding: 1em 0;
+  }
 
 }
 

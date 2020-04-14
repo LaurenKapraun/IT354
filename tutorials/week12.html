@@ -93,15 +93,45 @@
 			</div>
 
 			<h2>What is Postman?</h2>
+			<p>Postman is a platform that developers use for API development. Postman can be used to simplify the building of APIs, in order to create better APIs. It allows developers to save and organize requests, use variables to substitute information, and switch between environments.</p>
 
-			<h2>Examples</h2>
-			<p><a href="https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/">GitHub example</a></p>
-			<p><a href="https://medium.com/@perrysetgo/what-exactly-is-an-api-69f36968a41f">Twitter example?</a></p>
+			<h3>Example</h3>
+			<p>Let's say that I want to use the GitHub API to find out more information on my personal account. In Postman I can place the URL, https://api.github.com/users/laurenkapraun, into the URL request box as shown in the image below and click send. This then retrieves the information that is displayed using JSON. <span class="code">This data can be viewed in the code block below.</span> Within the data that was retrieved, you can also see that it provides links to other APIs, such as an API for my followers, who I'm following, a list of my repositories, etc. It also includes information like my username, website, bio, location, and so on.</p>
+			<img src="../images/postman_github.png" class="tutorial_img">
 			<pre class="line-numbers">
-					<code class="language-javascript"></code></pre>
-
-
-
+					<code class="language-json">{
+					    "login": "LaurenKapraun",
+					    "id": 38970744,
+					    "node_id": "MDQ6VXNlcjM4OTcwNzQ0",
+					    "avatar_url": "https://avatars2.githubusercontent.com/u/38970744?v=4",
+					    "gravatar_id": "",
+					    "url": "https://api.github.com/users/LaurenKapraun",
+					    "html_url": "https://github.com/LaurenKapraun",
+					    "followers_url": "https://api.github.com/users/LaurenKapraun/followers",
+					    "following_url": "https://api.github.com/users/LaurenKapraun/following{/other_user}",
+					    "gists_url": "https://api.github.com/users/LaurenKapraun/gists{/gist_id}",
+					    "starred_url": "https://api.github.com/users/LaurenKapraun/starred{/owner}{/repo}",
+					    "subscriptions_url": "https://api.github.com/users/LaurenKapraun/subscriptions",
+					    "organizations_url": "https://api.github.com/users/LaurenKapraun/orgs",
+					    "repos_url": "https://api.github.com/users/LaurenKapraun/repos",
+					    "events_url": "https://api.github.com/users/LaurenKapraun/events{/privacy}",
+					    "received_events_url": "https://api.github.com/users/LaurenKapraun/received_events",
+					    "type": "User",
+					    "site_admin": false,
+					    "name": "Lauren Kapraun",
+					    "company": null,
+					    "blog": "https://www.laurenkapraun.com/",
+					    "location": "Normal, IL",
+					    "email": null,
+					    "hireable": null,
+					    "bio": "My name is Lauren, and I am currently a Graduate Student at Illinois State University working on my Master of Science in Information Systems.",
+					    "public_repos": 15,
+					    "public_gists": 0,
+					    "followers": 3,
+					    "following": 3,
+					    "created_at": "2018-05-04T05:14:02Z",
+					    "updated_at": "2020-04-07T01:25:12Z"
+					}</code></pre>
 		</div>
 
 		<footer>

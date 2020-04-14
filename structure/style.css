@@ -99,6 +99,14 @@ a:hover, .headings a:hover, blockquote footer a:hover{
   margin: 0;
 }
 
+.two_col.api {
+  grid-column-gap: 2em;
+}
+
+.api h3 {
+  margin-bottom: 0;
+}
+
 .microservice p {
   margin: .5em 0;
 }
@@ -141,6 +149,12 @@ blockquote footer {
   width: unset;
   font-family: 'Muli', sans-serif;
   color: #293040;
+}
+.tutorial_img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
 }
 
 /* NAVIGATION */
@@ -642,6 +656,12 @@ code[class*="language-"], pre[class*="language-"] {
 	.purpose .content{
 		padding: 1em;
 	}
+
+  .tutorial_img {
+    width: 80%;
+    margin: unset;
+    padding: 1em 0;
+  }
 
 }
 

@@ -166,20 +166,20 @@
 			  			return a*b;
 			  }
 
-					noRest(1,2); //returns 2
-					noRest(1,2,3,4,5,6,7,8,9,10); //returns 2
+				noRest(1,2); //returns 2
+				noRest(1,2,3,4,5,6,7,8,9,10); //returns 2
 
-					//****** Rest Parameter ******//
-					function restFunction(...input) {
-					    let multiply = 1;
-					    for (let i of input) {
-					        multiply*=i;
-					    }
-					    return multiply;
-					}
+				//****** Rest Parameter ******//
+				function restFunction(...input) {
+				    let multiply = 1;
+				    for (let i of input) {
+				        multiply*=i;
+				    }
+				    return multiply;
+				}
 
-					restFunction(1,2); //returns 2
-					restFunction(1,2,3,4,5); //returns 120</code>
+				restFunction(1,2); //returns 2
+				restFunction(1,2,3,4,5); //returns 120</code>
 			  </pre>
 			</div>
 
@@ -190,26 +190,26 @@
 			  <p>In local scope, the variables are defined inside the function, while global scope variables are defined outside of the function.</p>
 			  <pre class="line-numbers">
 			  	<code class="language-javascript">//****** Global Scope ******//
-			  var myName = `Lauren`;
-					console.log(myName); //returns Lauren
+var myName = `Lauren`;
+console.log(myName); //returns Lauren
 
-					function displayName() {
-						//The variable myName is accessible within this function
-						console.log(myName);
-					}
+function displayName() {
+	//The variable myName is accessible within this function
+	console.log(myName);
+}
 
-					displayName(); //still returns Lauren
+displayName(); //still returns Lauren
 
-					//****** Local Scope ******//
-					function displayOtherName() {
-						var otherName = `Luna`;
-						console.log(otherName);
-					}
+//****** Local Scope ******//
+function displayOtherName() {
+	var otherName = `Luna`;
+	console.log(otherName);
+}
 
-					displayOtherName(); //returns Luna
+displayOtherName(); //returns Luna
 
-					//Running the following line will throw an error, because "otherName" is a local variable in the function
-					console.log(otherName);</code>
+//Running the following line will throw an error, because "otherName" is a local variable in the function
+console.log(otherName);</code>
 			  </pre>
 			</div>
 

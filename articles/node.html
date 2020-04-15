@@ -66,8 +66,15 @@
 			<p>The V8 Engine is an open-source high-performance JavaScript and WebAssembly engine created by The Chromium Project for Google Chrome and Chromium web browsers. The V8 was first released on September 2, 2008, and is written in C++. It is used to receive JavaScript code, compile it, and then execute it. The V8 engine is also used to handle call stack, manage memory allocations for objects, and clean up any objects that are no longer in use.</p>
 
 			<h2>How does Node Utilize the V8 Engine?</h2>
+			<p>V8 was originally created to increase the performance of JavaScript execution in web browsers, by translating JavaScript code into a more efficient machine code. In the early years of V8, the engine used the two compilers, full-codegen and Crankshaft. The full-codegen directly translates parsed JavaScript into machine code, which allows it to start executing machine code quickly. Then the Crankshaft translates the JavaScript abstract syntax tree into a hydrogen.</p>
+
+			<h2>What I found Interesting</h2>
+			<p>I have always found the study of Intellectual Property interesting because of my background in Fine Arts. I have noticed that when it comes to coding and the actual "sharing of code", the rules are a bit more "relaxed". While I was researching Node and the V8 Engine, I had found an article that mentioned that not only can "any author... publish or create modules in a public repository", but MIT has an open-source license that covers all intellectual property use <span class="code">(**)</span>.</p>
+
+			<br><hr><br>
 
 			<p style="font-size: .8em;"><em><span class="code">(*)</span> This information came from <a href="https://www.w3schools.com/nodejs/nodejs_intro.asp" target="_blank">w3schools.com</a></em></p>
+			<p style="font-size: .8em;"><em><span class="code">(**)</span> This information came from the article, <a href="https://brainhub.eu/blog/5-facts-node-js-development/" target="_blank">5 Facts to Know About Node.js Development</a></em></p>
 		</div>
 
 		<footer style="position: inherit !important;">

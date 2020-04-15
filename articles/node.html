@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="structure/style.css" type="text/css" media="all">
-		<link rel="stylesheet" href="structure/prism.css" type="text/css" media="all">
-		<script src="structure/js/prism.js"></script>
+		<link rel="stylesheet" href="../structure/style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../structure/prism.css" type="text/css" media="all">
+		<script src="../structure/js/prism.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<title>Lauren Kapraun | IT 354 Site</title>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="structure/js/header.js"></script>
-		<script src="structure/js/footer.js"></script>
+		<script src="../structure/js/header.js"></script>
+		<script src="../structure/js/footer.js"></script>
 
 		<!-- Fonts from GoogleFonts -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ovo&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 	<body>
 		<header>
 			<div class="maxScreenSize">
-				<p><a href="index.html">Lauren Kapraun</a></p>
+				<p><a href="../index.html">Lauren Kapraun</a></p>
 
 				<div class="header_nav nav_mobile">
 					<a href="javascript:void(0);" class="icon" onclick="openNav()" aria-label="Icon to Open Mobile Menu">
@@ -33,34 +33,44 @@
 	        		<nav class="navigationLinks" id="navlinks">
 		        	    <a href="javascript:void(0);" class="icon closebtn" onclick="closeNav()" aria-label="Icon to Open Mobile Menu">×</a>
 
-		            	<a href="index.html">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="#" class="currentPage">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 
 				<div class="header_nav nav_large">
 					<nav class="navigationLinks" id="navlinks">
-		            	<a href="index.html">Home</a>
-		            	<a href="tutorials.html">Tutorials</a>
-		            	<a href="#" class="currentPage">Articles</a>
-		            	<a href="videos.html">Videos</a>
+		            	<a href="../index.html">Home</a>
+		            	<a href="../tutorials.html">Tutorials</a>
+		            	<a href="../articles.html" class="currentPage">Articles</a>
+		            	<a href="../videos.html">Videos</a>
 	        		</nav>
 				</div>
 			</div>
 		</header>
 
-		<div class="content two_col maxScreenSize">
-			<h1>Articles</h1>
-        	<p><a href="articles/ECMAscript.html" class="btn">1. ECMAscript</a></p>
-        	<p><a href="articles/responsiveUsability.html" class="btn">2. Responsive Web Design &amp; Usability</a></p>
-					<p><a href="articles/microservices.html" class="btn">3. Monolithic vs. Microservice Architecture</a></p>
-					<p><a href="articles/webFontProblem.html" class="btn">4. The Mitt Romney Web Font Problem</a></p>
-					<p><a href="articles/node.html" class="btn">5. Node</a></p>
+		<div class="content maxScreenSize">
+			<h1>Node</h1>
+			<h2>What is Node?</h2>
+			<p>Node is a free open source runtime environment that uses JavaScript on the server. Typically, node is used to build back-end services. It uses asynchronous programming, which eliminates the need to wait before sending the next request. This helps in lowering development time and making applications more scalable. Node can be used to: <span class="code">(*)</span></p>
+				<ul>
+				 <li>Generate dynamic page content</li>
+				 <li>Create, open, read, write, delete, and close files on the server</li>
+				 <li>Collect form data</li>
+				 <li>Add, delete, modify data stored in a database</li>
+			 	</ul>
+
+			<h2>What is the V8 Engine?</h2>
+			<p>The V8 Engine is an open-source high-performance JavaScript and WebAssembly engine created by The Chromium Project for Google Chrome and Chromium web browsers. The V8 was first released on September 2, 2008, and is written in C++. It is used to receive JavaScript code, compile it, and then execute it. The V8 engine is also used to handle call stack, manage memory allocations for objects, and clean up any objects that are no longer in use.</p>
+
+			<h2>How does Node Utilize the V8 Engine?</h2>
+
+			<p style="font-size: .8em;"><em><span class="code">(*)</span> This information came from <a href="https://www.w3schools.com/nodejs/nodejs_intro.asp" target="_blank">w3schools.com</a></em></p>
 		</div>
 
-		<footer>
+		<footer style="position: inherit !important;">
 			<div class="maxScreenSize">
 				<section class="social">
 					<a class="linkedin" href="https://www.linkedin.com/in/laurenkapraun/" target="_blank" rel="noreferrer noopener">
@@ -78,17 +88,17 @@
 				</section>
 
 				<section class="footer_nav">
-					<a href="index.html">Home</a>
-					<a href="tutorials.html">Tutorials</a>
-					<a href="articles.html" class="footer_currentPage">Articles</a>
-					<a href="videos.html">Videos</a>
+					<a href="../index.html">Home</a>
+					<a href="../tutorials.html">Tutorials</a>
+					<a href="../articles.html" class="footer_currentPage">Articles</a>
+					<a href="../videos.html">Videos</a>
 				</section>
 
 
 			</div>
 		</footer>
 
-		<script src="structure/js/pageTabs.js"></script>
+		<script src="../structure/js/pageTabs.js"></script>
 
 	</body>
 </html>

@@ -1,5 +1,6 @@
 # IT354
-Advanced Web Application Development
+Advanced Web Application Development<br>
+https://it354.laurenkapraun.com/index.html
 
 ## Student Objectives:
 This course is designed to enable the student to:
